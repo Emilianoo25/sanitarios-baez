@@ -18,6 +18,7 @@ const mockProduct: Product = {
   specs: [],
   inStock: true,
   featured: true,
+  onPromo: false,
   tags: [],
 }
 

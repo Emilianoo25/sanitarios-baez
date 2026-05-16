@@ -1,7 +1,9 @@
 'use client'
 
-import { Sparkles, MessageCircle } from 'lucide-react'
+import { useState } from 'react'
+import { Sparkles, MessageCircle, ShoppingCart, Check } from 'lucide-react'
 import { whatsappUrl } from '@/lib/whatsapp'
+import { useCart } from '@/context/CartContext'
 import type { Product } from '@/types'
 
 interface ProductActionsProps {
@@ -11,27 +13,40 @@ interface ProductActionsProps {
 }
 
 export function ProductActions({ product, onOpenAI, variant = 'page' }: ProductActionsProps) {
+  const [added, setAdded] = useState(false)
+  const { addToCart, openCart } = useCart()
+
+  function handleAddToCart(e: React.MouseEvent) {
+    e.preventDefault()
+    addToCart(product)
+    setAdded(true)
+    setTimeout(() => {
+      setAdded(false)
+      openCart()
+    }, 600)
+  }
+
   if (variant === 'card') {
     return (
       <div className="flex flex-col gap-2 mt-3">
         <button
-          onClick={e => {
-            e.preventDefault()
-            onOpenAI()
-          }}
-          className="flex w-full items-center justify-center gap-2 rounded-md border border-primary px-3 py-2 text-xs font-medium text-primary hover:bg-primary hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          onClick={handleAddToCart}
+          className={`flex w-full items-center justify-center gap-2 rounded-none border-2 px-3 py-2 text-xs font-medium transition-colors ${
+            added
+              ? 'border-green-500 bg-green-50 text-green-700'
+              : 'border-primary text-primary hover:bg-primary hover:text-white'
+          }`}
         >
-          <Sparkles size={14} />
-          Consultar con asistente IA
+          {added ? <><Check size={13} /> ¡Agregado!</> : <><ShoppingCart size={13} /> Agregar al carrito</>}
         </button>
         <a
           href={whatsappUrl(product)}
           target="_blank"
           rel="noopener noreferrer"
           onClick={e => e.stopPropagation()}
-          className="flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-3 py-2 text-xs font-medium text-white hover:bg-[#1fba58] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
+          className="flex w-full items-center justify-center gap-2 rounded-none bg-[#25D366] px-3 py-2 text-xs font-medium text-white hover:bg-[#1fba58] transition-colors"
         >
-          <MessageCircle size={14} />
+          <MessageCircle size={13} />
           Consultar por WhatsApp
         </a>
       </div>
@@ -40,22 +55,50 @@ export function ProductActions({ product, onOpenAI, variant = 'page' }: ProductA
 
   return (
     <div className="flex flex-col gap-3">
+      {/* Add to cart */}
       <button
-        onClick={onOpenAI}
-        className="flex w-full items-center justify-center gap-2 rounded-md border-2 border-primary px-4 py-3.5 text-sm font-medium text-primary hover:bg-primary hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+        onClick={handleAddToCart}
+        className={`flex w-full items-center justify-center gap-2 rounded-md border-2 px-4 py-3.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+          added
+            ? 'border-green-500 bg-green-50 text-green-700'
+            : 'border-primary text-primary hover:bg-primary hover:text-white'
+        }`}
       >
-        <Sparkles size={16} />
-        Consultar con asistente IA
+        {added ? (
+          <>
+            <Check size={16} />
+            ¡Agregado al carrito!
+          </>
+        ) : (
+          <>
+            <ShoppingCart size={16} />
+            Agregar al carrito
+          </>
+        )}
       </button>
+
+      {/* WhatsApp */}
       <a
         href={whatsappUrl(product)}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 py-3.5 text-sm font-medium text-white hover:bg-[#1fba58] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
+        className="flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 py-3 text-sm font-medium text-white hover:bg-[#1fba58] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
       >
         <MessageCircle size={16} />
         Consultar por WhatsApp con Báez
       </a>
+
+      {/* AI */}
+      <button
+        onClick={onOpenAI}
+        className="flex w-full items-center justify-center gap-2 rounded-md border border-gray-200 px-4 py-2.5 text-sm font-medium text-gray-600 hover:border-primary hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+      >
+        <Sparkles size={15} />
+        Asistente virtual
+        <span className="ml-0.5 rounded-full bg-accent px-1.5 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-white leading-none">
+          Nuevo
+        </span>
+      </button>
     </div>
   )
 }

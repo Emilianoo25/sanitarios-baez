@@ -5,6 +5,7 @@ import { ShoppingCart, Search, Menu } from 'lucide-react'
 import { useState } from 'react'
 import { BrandLogo } from '@/components/common/BrandLogo'
 import { MobileMenu } from './MobileMenu'
+import { useCart } from '@/context/CartContext'
 
 const NAV_LINKS = [
   { label: 'Griferías', href: '/productos?categoria=griferias' },
@@ -17,6 +18,7 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { totalItems, openCart } = useCart()
 
   return (
     <>
@@ -48,17 +50,20 @@ export function Navbar() {
               <Search size={20} />
             </button>
             <button
-              aria-label="Carrito (0 productos)"
-              className="relative p-2 text-muted hover:text-primary transition-colors rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              onClick={openCart}
+              aria-label={`Carrito (${totalItems} productos)`}
+              className="relative p-2 text-muted hover:text-primary transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               <ShoppingCart size={20} />
-              <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-medium text-white leading-none">
-                0
-              </span>
+              {totalItems > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-accent text-[10px] font-medium text-white leading-none">
+                  {totalItems}
+                </span>
+              )}
             </button>
             <Link
               href="/contacto"
-              className="hidden sm:inline-flex items-center rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent-hover transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+              className="hidden sm:inline-flex items-center rounded-none bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-dark transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               Consultar
             </Link>

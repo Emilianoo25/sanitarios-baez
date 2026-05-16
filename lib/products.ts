@@ -19,6 +19,10 @@ export function getFeaturedProducts(): Product[] {
   return products.filter(p => p.featured)
 }
 
+export function getPromoProducts(): Product[] {
+  return products.filter(p => p.onPromo)
+}
+
 export function getRelatedProducts(product: Product, limit = 4): Product[] {
   return products
     .filter(p => p.category === product.category && p.id !== product.id)

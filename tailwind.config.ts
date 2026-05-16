@@ -8,6 +8,17 @@ const config: Config = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    borderRadius: {
+      none: '0',
+      DEFAULT: '2px',
+      sm: '2px',
+      md: '2px',
+      lg: '2px',
+      xl: '2px',
+      '2xl': '2px',
+      '3xl': '2px',
+      full: '9999px',
+    },
     extend: {
       colors: {
         primary: {
@@ -55,11 +66,6 @@ const config: Config = {
       },
       maxWidth: {
         container: '1280px',
-      },
-      borderRadius: {
-        lg: '0.625rem',
-        md: '0.5rem',
-        sm: '0.375rem',
       },
     },
   },

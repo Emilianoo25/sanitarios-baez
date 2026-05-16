@@ -26,5 +26,7 @@ export interface Product {
   specs: ProductSpec[]
   inStock: boolean
   featured: boolean
+  onPromo: boolean
+  discount?: number
   tags: string[]
 }

@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
-import { SlidersHorizontal } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { SlidersHorizontal, Tag } from 'lucide-react'
 import { FilterSidebar } from '@/components/filters/FilterSidebar'
 import { FilterChips } from '@/components/filters/FilterChips'
 import { ProductGrid } from '@/components/product/ProductGrid'
@@ -16,6 +17,8 @@ const SORT_OPTIONS = [
 ] as const
 
 export default function ProductosPage() {
+  const searchParams = useSearchParams()
+  const promoOnly = searchParams.get('promo') === 'true'
   const [aiOpen, setAiOpen] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const {
@@ -34,7 +37,17 @@ export default function ProductosPage() {
     <div className="min-h-screen bg-white">
       <Container className="py-8">
         <div className="mb-6">
-          <h1 className="font-display text-3xl font-medium text-ink">Catálogo</h1>
+          <div className="flex items-center gap-3">
+            <h1 className="font-display text-3xl font-medium text-ink">
+              {promoOnly ? 'Ofertas y promociones' : 'Catálogo'}
+            </h1>
+            {promoOnly && (
+              <span className="inline-flex items-center gap-1 rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent">
+                <Tag size={12} />
+                Productos en promo
+              </span>
+            )}
+          </div>
         </div>
 
         <div className="flex items-center justify-between gap-4 mb-4">
@@ -109,7 +122,10 @@ export default function ProductosPage() {
           )}
 
           <div className="flex-1 min-w-0">
-            <ProductGrid products={filtered} onOpenAI={() => setAiOpen(true)} />
+            <ProductGrid
+              products={promoOnly ? filtered.filter(p => p.onPromo) : filtered}
+              onOpenAI={() => setAiOpen(true)}
+            />
           </div>
         </div>
       </Container>

@@ -18,9 +18,7 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
 
   return (
     <motion.article
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.2, ease: 'easeOut' }}
-      className={`group relative flex flex-col rounded-xl bg-white overflow-hidden ${
+      className={`group relative flex flex-col bg-white overflow-hidden ${
         isPremium ? 'ring-2 ring-accent' : 'border border-border'
       }`}
       onMouseEnter={() => setActionsVisible(true)}
@@ -28,14 +26,14 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
     >
       {isPremium && (
         <div className="absolute top-3 right-3 z-10">
-          <span className="rounded-full bg-accent px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-white">
+          <span className="bg-accent px-2.5 py-0.5 text-[10px] font-medium uppercase tracking-wider text-white">
             Premium
           </span>
         </div>
       )}
       {!product.inStock && (
         <div className="absolute top-3 left-3 z-10">
-          <span className="rounded-full bg-muted/80 px-2.5 py-0.5 text-[10px] font-medium text-white">
+          <span className="bg-gray-600/80 px-2.5 py-0.5 text-[10px] font-medium text-white">
             Sin stock
           </span>
         </div>
@@ -43,7 +41,7 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
 
       <Link
         href={`/productos/${product.slug}`}
-        className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-t-xl"
+        className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
       >
         <div className="relative aspect-square bg-bone overflow-hidden">
           <Image
@@ -78,13 +76,7 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
           </p>
         </div>
 
-        <div
-          className={`mt-auto sm:transition-all sm:duration-200 ${
-            actionsVisible
-              ? 'sm:opacity-100 sm:translate-y-0'
-              : 'sm:opacity-0 sm:translate-y-2'
-          }`}
-        >
+        <div className="mt-auto">
           <ProductActions product={product} onOpenAI={onOpenAI} variant="card" />
         </div>
       </div>
