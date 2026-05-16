@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronRight, CreditCard, Building2, Banknote, Check } from 'lucide-react'
 import { useCart } from '@/context/CartContext'

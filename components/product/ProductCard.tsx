@@ -2,7 +2,6 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ProductActions } from './ProductActions'
 import type { Product } from '@/types'
@@ -14,15 +13,11 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCardProps) {
-  const [actionsVisible, setActionsVisible] = useState(false)
-
   return (
     <motion.article
       className={`group relative flex flex-col bg-white overflow-hidden ${
         isPremium ? 'ring-2 ring-accent' : 'border border-border'
       }`}
-      onMouseEnter={() => setActionsVisible(true)}
-      onMouseLeave={() => setActionsVisible(false)}
     >
       {isPremium && (
         <div className="absolute top-3 right-3 z-10">

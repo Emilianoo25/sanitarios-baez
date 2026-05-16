@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { SlidersHorizontal, Tag } from 'lucide-react'
 import { FilterSidebar } from '@/components/filters/FilterSidebar'
@@ -17,6 +17,10 @@ const SORT_OPTIONS = [
 ] as const
 
 export default function ProductosPage() {
+  return <Suspense><ProductosContent /></Suspense>
+}
+
+function ProductosContent() {
   const searchParams = useSearchParams()
   const promoOnly = searchParams.get('promo') === 'true'
   const [aiOpen, setAiOpen] = useState(false)
