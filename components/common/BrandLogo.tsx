@@ -13,10 +13,10 @@ export function BrandLogo({ className }: BrandLogoProps) {
       aria-label="Sanitarios Báez — Inicio"
     >
       <Image
-        src="/logo.svg"
+        src="/logo.png"
         alt="Sanitarios Báez"
-        width={130}
-        height={42}
+        width={160}
+        height={60}
         className="h-10 w-auto"
         priority
       />
