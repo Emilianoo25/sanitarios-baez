@@ -1,0 +1,134 @@
+[
+  {
+    "id": "1",
+    "slug": "griferia-fv-arizona-monocomando",
+    "name": "FV Arizona Monocomando Lavatorio",
+    "brand": "FV",
+    "sku": "0103/B1.CR",
+    "category": "griferias",
+    "subcategory": "lavatorio",
+    "price": 185000,
+    "priceCash": 166500,
+    "installments": { "count": 3, "amount": 61666 },
+    "images": ["https://placehold.co/800x800/F8F7F4/0A4D8C/png?text=FV+Arizona"],
+    "description": "Grifería monocomando para lavatorio con cartucho cerámico de 35mm. Acabado cromo de alta resistencia. Garantía oficial FV.",
+    "specs": [
+      { "key": "Tipo", "value": "Monocomando" },
+      { "key": "Acabado", "value": "Cromo" },
+      { "key": "Garantía", "value": "5 años" }
+    ],
+    "inStock": true,
+    "featured": true,
+    "tags": ["bestseller", "fv-clasico"]
+  },
+  {
+    "id": "2",
+    "slug": "ferrum-andina-inodoro-deposito",
+    "name": "Ferrum Andina Inodoro con Depósito",
+    "brand": "Ferrum",
+    "sku": "IAB-D",
+    "category": "sanitarios",
+    "subcategory": "inodoros",
+    "price": 245000,
+    "priceCash": 220500,
+    "installments": { "count": 3, "amount": 81666 },
+    "images": ["https://placehold.co/800x800/F8F7F4/0A4D8C/png?text=Ferrum+Andina"],
+    "description": "Inodoro largo con depósito dual flush. Diseño moderno con líneas limpias. Incluye tornillería de fijación.",
+    "specs": [
+      { "key": "Tipo", "value": "Largo con depósito" },
+      { "key": "Sistema", "value": "Dual flush 3/6L" },
+      { "key": "Color", "value": "Blanco" }
+    ],
+    "inStock": true,
+    "featured": true,
+    "tags": ["combo-bano"]
+  },
+  {
+    "id": "3",
+    "slug": "ferrum-bari-bacha-redonda",
+    "name": "Ferrum Bari Bacha Redonda de Apoyar",
+    "brand": "Ferrum",
+    "sku": "BSB",
+    "category": "bachas",
+    "subcategory": "de-apoyar",
+    "price": 115000,
+    "priceCash": 103500,
+    "installments": { "count": 3, "amount": 38333 },
+    "images": ["https://placehold.co/800x800/F8F7F4/0A4D8C/png?text=Bacha+Bari"],
+    "description": "Bacha redonda de apoyar en porcelana blanca. Diseño minimalista ideal para baños modernos.",
+    "specs": [
+      { "key": "Material", "value": "Porcelana" },
+      { "key": "Diámetro", "value": "42cm" },
+      { "key": "Tipo", "value": "De apoyar" }
+    ],
+    "inStock": true,
+    "featured": true,
+    "tags": ["moderno"]
+  },
+  {
+    "id": "4",
+    "slug": "peirano-tres-griferia-cocina",
+    "name": "Peirano Tres Monocomando Cocina",
+    "brand": "Peirano",
+    "sku": "70-130",
+    "category": "griferias",
+    "subcategory": "cocina",
+    "price": 155000,
+    "priceCash": 139500,
+    "installments": { "count": 3, "amount": 51666 },
+    "images": ["https://placehold.co/800x800/F8F7F4/0A4D8C/png?text=Peirano+Tres"],
+    "description": "Grifería monocomando para cocina con caño alto giratorio. Excelente caudal y durabilidad.",
+    "specs": [
+      { "key": "Tipo", "value": "Monocomando" },
+      { "key": "Acabado", "value": "Cromo" },
+      { "key": "Caño", "value": "Alto giratorio" }
+    ],
+    "inStock": true,
+    "featured": true,
+    "tags": ["cocina"]
+  },
+  {
+    "id": "5",
+    "slug": "ferrum-receptaculo-ducha-80x80",
+    "name": "Ferrum Receptáculo de Ducha 80x80cm",
+    "brand": "Ferrum",
+    "sku": "RDB80",
+    "category": "duchas",
+    "subcategory": "receptaculos",
+    "price": 385000,
+    "priceCash": 346500,
+    "installments": { "count": 3, "amount": 128333 },
+    "images": ["https://placehold.co/800x800/F8F7F4/0A4D8C/png?text=Receptaculo+80x80"],
+    "description": "Receptáculo de ducha en porcelana esmaltada. Antideslizante. Medidas 80x80cm.",
+    "specs": [
+      { "key": "Medidas", "value": "80x80cm" },
+      { "key": "Material", "value": "Porcelana" },
+      { "key": "Acabado", "value": "Antideslizante" }
+    ],
+    "inStock": true,
+    "featured": true,
+    "tags": ["ducha"]
+  },
+  {
+    "id": "6",
+    "slug": "fv-allegro-columna-ducha-termostatica",
+    "name": "FV Allegro Columna de Ducha Termostática",
+    "brand": "FV",
+    "sku": "0310/B1.CR",
+    "category": "griferias",
+    "subcategory": "duchas",
+    "price": 425000,
+    "priceCash": 382500,
+    "installments": { "count": 3, "amount": 141666 },
+    "images": ["https://placehold.co/800x800/F8F7F4/0A4D8C/png?text=FV+Allegro"],
+    "description": "Columna de ducha con válvula termostática. Mantiene temperatura constante. Incluye ducha de mano y rociador superior.",
+    "specs": [
+      { "key": "Tipo", "value": "Termostática" },
+      { "key": "Incluye", "value": "Ducha de mano + rociador" },
+      { "key": "Garantía", "value": "5 años" }
+    ],
+    "inStock": true,
+    "featured": true,
+    "tags": ["premium", "lujo"]
+  }
+]
