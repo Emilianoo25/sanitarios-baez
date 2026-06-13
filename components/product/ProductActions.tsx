@@ -28,27 +28,35 @@ export function ProductActions({ product, onOpenAI, variant = 'page' }: ProductA
 
   if (variant === 'card') {
     return (
-      <div className="flex flex-col gap-2 mt-3">
+      <div className="flex flex-col gap-2.5">
         <button
           onClick={handleAddToCart}
-          className={`flex w-full items-center justify-center gap-2 rounded-none border-2 px-3 py-2 text-xs font-medium transition-colors ${
+          className={`flex w-full items-center justify-center gap-2 px-3 py-2.5 text-xs font-semibold tracking-wide transition-colors ${
             added
-              ? 'border-green-500 bg-green-50 text-green-700'
-              : 'border-primary text-primary hover:bg-primary hover:text-white'
+              ? 'bg-green-600 text-white'
+              : 'bg-primary text-white hover:bg-primary-dark'
           }`}
         >
-          {added ? <><Check size={13} /> ¡Agregado!</> : <><ShoppingCart size={13} /> Agregar al carrito</>}
+          {added ? <><Check size={14} /> ¡Agregado!</> : <><ShoppingCart size={14} /> Agregar al carrito</>}
         </button>
-        <a
-          href={whatsappUrl(product)}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={e => e.stopPropagation()}
-          className="flex w-full items-center justify-center gap-2 rounded-none bg-[#25D366] px-3 py-2 text-xs font-medium text-white hover:bg-[#1fba58] transition-colors"
-        >
-          <MessageCircle size={13} />
-          Consultar por WhatsApp
-        </a>
+        <div className="flex items-center justify-center gap-4 text-[11px] font-medium">
+          <a
+            href={whatsappUrl(product)}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={e => e.stopPropagation()}
+            className="flex items-center gap-1 text-[#1fa855] hover:text-[#157d40] transition-colors"
+          >
+            <MessageCircle size={13} /> WhatsApp
+          </a>
+          <span className="h-3 w-px bg-border" />
+          <button
+            onClick={e => { e.preventDefault(); onOpenAI() }}
+            className="flex items-center gap-1 text-primary hover:text-primary-dark transition-colors"
+          >
+            <Sparkles size={13} /> Asistente
+          </button>
+        </div>
       </div>
     )
   }
