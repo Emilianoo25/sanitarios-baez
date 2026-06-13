@@ -18,6 +18,8 @@ export default function CheckoutPage() {
   const { items, totalPrice, clearCart } = useCart()
   const [payment, setPayment] = useState<PaymentMethod>('mercadopago')
   const [done, setDone] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState('')
   const [form, setForm] = useState({
     email: '', nombre: '', apellidos: '', empresa: '',
     dni: '', direccion: '', ciudad: '', provincia: 'Ciudad Autónoma de Buenos Aires',
@@ -31,8 +33,47 @@ export default function CheckoutPage() {
   const discount = payment === 'transferencia' ? 0.10 : 0
   const finalPrice = totalPrice * (1 - discount)
 
+  async function payWithMercadoPago() {
+    setError('')
+    setLoading(true)
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: items.map(i => ({
+            title: i.product.name,
+            quantity: i.quantity,
+            unit_price: i.product.price,
+          })),
+          payer: { name: `${form.nombre} ${form.apellidos}`.trim(), email: form.email },
+        }),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        setError(data?.error ?? 'No se pudo iniciar el pago.')
+        setLoading(false)
+        return
+      }
+      const url = data.init_point ?? data.sandbox_init_point
+      if (!url) {
+        setError('MercadoPago no devolvió un link de pago.')
+        setLoading(false)
+        return
+      }
+      window.location.href = url
+    } catch {
+      setError('Error de conexión con MercadoPago.')
+      setLoading(false)
+    }
+  }
+
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
+    if (payment === 'mercadopago') {
+      payWithMercadoPago()
+      return
+    }
     const lines = [
       `*Nuevo pedido — Sanitarios Báez*`,
       ``,
@@ -46,7 +87,7 @@ export default function CheckoutPage() {
       `*Productos:*`,
       ...items.map(i => `• ${i.product.name} × ${i.quantity} — $${(i.product.price * i.quantity).toLocaleString('es-AR')}`),
       ``,
-      `*Método de pago:* ${payment === 'mercadopago' ? 'Mercado Pago' : payment === 'transferencia' ? 'Transferencia bancaria (-10%)' : 'Efectivo'}`,
+      `*Método de pago:* ${payment === 'transferencia' ? 'Transferencia bancaria (-10%)' : 'Efectivo'}`,
       `*Total:* $${finalPrice.toLocaleString('es-AR')}`,
       form.notasPedido ? `*Notas:* ${form.notasPedido}` : '',
     ].filter(Boolean).join('\n')
@@ -261,11 +302,19 @@ export default function CheckoutPage() {
                 Tus datos personales se utilizarán para procesar tu pedido y mejorar tu experiencia de compra.
               </p>
 
+              {error && (
+                <p className="bg-red-50 border border-red-200 px-3 py-2 text-xs text-red-600">{error}</p>
+              )}
               <button
                 type="submit"
-                className="w-full bg-accent py-4 text-sm font-semibold text-white hover:bg-accent-hover transition-colors tracking-wide"
+                disabled={loading}
+                className="w-full bg-accent py-4 text-sm font-semibold text-white hover:bg-accent-hover transition-colors tracking-wide disabled:opacity-50"
               >
-                Realizar el pedido →
+                {loading
+                  ? 'Redirigiendo a MercadoPago…'
+                  : payment === 'mercadopago'
+                    ? 'Pagar con MercadoPago →'
+                    : 'Realizar el pedido →'}
               </button>
             </div>
 
