@@ -33,3 +33,11 @@
     @apply bg-white text-ink font-sans antialiased;
   }
 }
+
+@keyframes heroSlideIn {
+  from { opacity: 0; transform: translateX(28px) scale(1.04); }
+  to { opacity: 1; transform: translateX(0) scale(1); }
+}
+.animate-hero-slide {
+  animation: heroSlideIn 0.45s ease-out;
+}

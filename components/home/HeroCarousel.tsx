@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronLeft, ChevronRight, Sparkles, ArrowRight } from 'lucide-react'
@@ -85,9 +85,31 @@ export function HeroCarousel() {
   const [current, setCurrent] = useState(0)
   const [paused, setPaused] = useState(false)
   const [aiOpen, setAiOpen] = useState(false)
+  const touchStartX = useRef<number | null>(null)
+  const touchStartY = useRef<number | null>(null)
 
   const next = useCallback(() => setCurrent(c => (c + 1) % SLIDES.length), [])
   const prev = useCallback(() => setCurrent(c => (c - 1 + SLIDES.length) % SLIDES.length), [])
+
+  function onTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.touches[0].clientX
+    touchStartY.current = e.touches[0].clientY
+    setPaused(true)
+  }
+
+  function onTouchEnd(e: React.TouchEvent) {
+    if (touchStartX.current === null || touchStartY.current === null) return
+    const dx = e.changedTouches[0].clientX - touchStartX.current
+    const dy = e.changedTouches[0].clientY - touchStartY.current
+    // Solo cuenta como swipe si es horizontal y supera el umbral.
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+      if (dx < 0) next()
+      else prev()
+    }
+    touchStartX.current = null
+    touchStartY.current = null
+    setPaused(false)
+  }
 
   useEffect(() => {
     if (paused) return
@@ -100,10 +122,12 @@ export function HeroCarousel() {
   return (
     <>
       <section
-        className="relative w-full overflow-hidden bg-ink"
+        className="relative w-full overflow-hidden bg-ink touch-pan-y select-none"
         aria-label="Ofertas y promociones"
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
       >
         {/* Background image */}
         <div className="relative h-[480px] sm:h-[520px] lg:h-[580px] w-full">
@@ -112,7 +136,7 @@ export function HeroCarousel() {
             src={slide.image}
             alt={slide.imageAlt}
             fill
-            className="object-cover"
+            className="object-cover animate-hero-slide"
             priority={current === 0}
             sizes="100vw"
           />
