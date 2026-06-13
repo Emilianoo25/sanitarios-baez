@@ -9,10 +9,10 @@ export default function HomePage() {
   return (
     <>
       <HeroCarousel />
+      <ServiceBadges />
       <Categories />
       <FeaturedProducts />
       <SobreBaez />
-      <ServiceBadges />
       <ObrasPreview />
     </>
   )

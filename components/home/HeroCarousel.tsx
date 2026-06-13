@@ -136,7 +136,7 @@ export function HeroCarousel() {
               </div>
 
               {/* Title */}
-              <h2 className="font-display text-3xl font-medium leading-tight text-white sm:text-4xl lg:text-5xl">
+              <h2 className="font-display text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
                 {slide.title}
               </h2>
 
@@ -146,13 +146,13 @@ export function HeroCarousel() {
               </p>
 
               {/* Price */}
-              <div className="mt-5 flex items-baseline justify-center gap-3">
+              <div className="mt-5 flex flex-wrap items-baseline justify-center gap-x-3 gap-y-1">
                 {slide.originalPrice && (
-                  <span className="text-lg text-white/50 line-through">
+                  <span className="text-sm text-white/50 line-through sm:text-lg">
                     {slide.originalPrice}
                   </span>
                 )}
-                <span className="font-display text-3xl font-medium text-accent sm:text-4xl">
+                <span className="font-display text-2xl font-semibold tracking-tight text-accent sm:text-4xl">
                   {slide.promoPrice}
                 </span>
               </div>
@@ -184,14 +184,14 @@ export function HeroCarousel() {
           {/* Arrows */}
           <button
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2.5 text-white backdrop-blur-sm hover:bg-black/55 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="absolute left-3 top-1/2 hidden sm:flex -translate-y-1/2 rounded-full bg-black/30 p-2.5 text-white backdrop-blur-sm hover:bg-black/55 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             aria-label="Slide anterior"
           >
             <ChevronLeft size={20} />
           </button>
           <button
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-black/30 p-2.5 text-white backdrop-blur-sm hover:bg-black/55 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+            className="absolute right-3 top-1/2 hidden sm:flex -translate-y-1/2 rounded-full bg-black/30 p-2.5 text-white backdrop-blur-sm hover:bg-black/55 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             aria-label="Siguiente slide"
           >
             <ChevronRight size={20} />

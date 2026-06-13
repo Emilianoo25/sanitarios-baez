@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
 import { Container } from '@/components/common/Container'
 
 const STATS = [
@@ -10,46 +11,65 @@ const STATS = [
 
 export function SobreBaez() {
   return (
-    <section className="bg-primary py-16 lg:py-20" aria-labelledby="sobre-baez-heading">
-      <Container>
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+    <section
+      className="relative overflow-hidden bg-gradient-to-br from-primary-dark via-primary to-primary-dark py-20 lg:py-28"
+      aria-labelledby="sobre-baez-heading"
+    >
+      {/* Decorative grid + glow */}
+      <div
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
+          backgroundSize: '56px 56px',
+        }}
+      />
+      <div className="pointer-events-none absolute -top-32 -right-24 h-96 w-96 rounded-full bg-accent/20 blur-[120px]" />
+      <div className="pointer-events-none absolute -bottom-40 -left-24 h-96 w-96 rounded-full bg-sky-400/20 blur-[120px]" />
+
+      <Container className="relative">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1.1fr_1fr]">
           {/* Text */}
           <div className="space-y-6 text-white">
-            <p className="text-[11px] font-medium uppercase tracking-[2px] text-white/60">
+            <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[3px] text-white/60">
+              <span className="h-px w-8 bg-accent" />
               Sobre nosotros
             </p>
             <h2
               id="sobre-baez-heading"
-              className="font-display text-3xl font-medium leading-snug sm:text-4xl"
+              className="font-display text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl"
             >
-              Sanitarios Báez: más de 15 años llevando calidad a tu hogar.
+              Más de 15 años llevando calidad real a tu hogar.
             </h2>
-            <p className="text-white/75 leading-relaxed text-sm sm:text-base">
-              Somos una empresa familiar de Villa Madero, Buenos Aires. Trabajamos con las mejores
-              marcas del mercado — FV, Ferrum, Peirano — para darte el producto correcto al primer
-              intento, con asesoramiento de verdad y envío en el día para CABA y GBA.
+            <p className="max-w-xl text-white/70 leading-relaxed text-[15px]">
+              Empresa familiar de Villa Madero, Buenos Aires. Trabajamos con FV, Ferrum y Peirano
+              para darte el producto correcto al primer intento, con asesoramiento de verdad y
+              envío en el día para CABA y GBA.
             </p>
-            <p className="text-white/75 leading-relaxed text-sm sm:text-base">
-              Nada de vueltas, nada de promesas vacías. Si lo tenés que cambiar, lo cambiamos.
-              Si tenés dudas, te asesoramos por WhatsApp sin costo.
+            <p className="max-w-xl text-white/70 leading-relaxed text-[15px]">
+              Nada de vueltas ni promesas vacías. Si lo tenés que cambiar, lo cambiamos. Si tenés
+              dudas, te asesoramos por WhatsApp sin costo.
             </p>
             <Link
               href="/contacto"
-              className="inline-flex items-center rounded-md border border-white/30 bg-white/10 px-5 py-3 text-sm font-medium text-white hover:bg-white/20 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+              className="group inline-flex items-center gap-2 bg-white px-6 py-3.5 text-sm font-semibold text-primary transition-colors hover:bg-accent hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             >
               Contactanos
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
 
           {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-px overflow-hidden border border-white/15 bg-white/10">
             {STATS.map(stat => (
               <div
                 key={stat.label}
-                className="rounded-xl bg-white/10 p-6 text-white"
+                className="bg-primary/40 p-7 backdrop-blur-sm transition-colors hover:bg-primary/20"
               >
-                <p className="font-display text-4xl font-medium">{stat.value}</p>
-                <p className="mt-1 text-sm text-white/70">{stat.label}</p>
+                <p className="font-display text-5xl font-bold tracking-tight text-white">
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-sm text-white/60">{stat.label}</p>
               </div>
             ))}
           </div>

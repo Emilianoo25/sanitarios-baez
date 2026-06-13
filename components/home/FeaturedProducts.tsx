@@ -24,10 +24,11 @@ export function FeaturedProducts() {
           transition={{ duration: 0.4 }}
           className="mb-8"
         >
-          <p className="text-[11px] font-medium uppercase tracking-[2px] text-accent mb-2">
+          <p className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[3px] text-accent mb-3">
+            <span className="h-px w-8 bg-accent" />
             Selección del mes
           </p>
-          <h2 className="font-display text-3xl font-medium text-ink">
+          <h2 className="font-display text-4xl font-semibold tracking-tight text-ink">
             Productos destacados
           </h2>
         </motion.div>

@@ -61,8 +61,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        display: ['var(--font-fraunces)', 'serif'],
-        sans: ['var(--font-inter)', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
         container: '1280px',

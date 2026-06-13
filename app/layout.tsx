@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Fraunces } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
@@ -8,16 +8,26 @@ import { WhatsAppButton } from '@/components/whatsapp/WhatsAppButton'
 import { CartProvider } from '@/context/CartContext'
 import { CartDrawer } from '@/components/cart/CartDrawer'
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+const hanken = localFont({
+  variable: '--font-sans',
   display: 'swap',
+  src: [
+    { path: './fonts/hanken-400.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/hanken-500.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/hanken-600.woff2', weight: '600', style: 'normal' },
+    { path: './fonts/hanken-700.woff2', weight: '700', style: 'normal' },
+  ],
 })
 
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  variable: '--font-fraunces',
+const bricolage = localFont({
+  variable: '--font-display',
   display: 'swap',
+  src: [
+    { path: './fonts/bricolage-400.woff2', weight: '400', style: 'normal' },
+    { path: './fonts/bricolage-600.woff2', weight: '600', style: 'normal' },
+    { path: './fonts/bricolage-700.woff2', weight: '700', style: 'normal' },
+    { path: './fonts/bricolage-800.woff2', weight: '800', style: 'normal' },
+  ],
 })
 
 export const metadata: Metadata = {
@@ -32,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es" className={`${inter.variable} ${fraunces.variable}`}>
+    <html lang="es" className={`${hanken.variable} ${bricolage.variable}`}>
       <body className="font-sans bg-white text-ink antialiased">
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-white">
           Ir al contenido principal
