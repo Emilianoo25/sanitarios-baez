@@ -5,6 +5,8 @@ import type { Product } from '@/types'
 export interface AssistantReply {
   text: string
   products: Product[]
+  /** Si true, mostrar botón para derivar a WhatsApp con una persona. */
+  whatsapp?: boolean
 }
 
 const CATEGORY_KEYWORDS: Record<string, string[]> = {
@@ -49,6 +51,15 @@ const QUESTION_INTENT =
 export function getTextRecommendation(input: string): AssistantReply {
   const q = normalize(input)
   const all = getAllProducts()
+
+  // 0) ¿Quiere hablar con una persona? → derivar a WhatsApp.
+  if (/(hablar con|con una persona|con alguien|un humano|persona real|asesor|vendedor|atencion|atiende|llamar|telefono|whatsapp|wsp|contacto humano|hablar con un|me atienda)/.test(q)) {
+    return {
+      text: 'Te paso con el equipo de Sanitarios Báez para que te atienda una persona. Tocá el botón y seguís la charla por WhatsApp 👇',
+      products: [],
+      whatsapp: true,
+    }
+  }
 
   // 1) ¿Es una pregunta que responde la base de conocimiento?
   const kb = matchKnowledge(q)
@@ -106,8 +117,9 @@ export function getTextRecommendation(input: string): AssistantReply {
     if (!productIntent) {
       // No hubo match en la base de conocimiento ni intención de compra clara.
       return {
-        text: 'Mmm, esa no la tengo bien cubierta todavía. Puedo ayudarte con dudas sobre griferías, inodoros, bidets, bachas y duchas (materiales, medidas, instalación, marcas) o recomendarte un producto. Si es algo más específico, lo mejor es consultarlo por WhatsApp con el equipo de Báez.',
+        text: 'Mmm, esa no la tengo bien cubierta todavía. Puedo ayudarte con dudas sobre griferías, inodoros, bidets, bachas y duchas (materiales, medidas, instalación, marcas) o recomendarte un producto. Si es algo más específico, te paso con una persona del equipo 👇',
         products: [],
+        whatsapp: true,
       }
     }
   }

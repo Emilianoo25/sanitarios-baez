@@ -6,8 +6,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Sparkles, X, Send, ImagePlus, MessageCircle } from 'lucide-react'
 import { getTextRecommendation, getPhotoRecommendation } from '@/lib/aiAssistant'
-import { whatsappUrl } from '@/lib/whatsapp'
+import { whatsappUrl, whatsappBaseUrl } from '@/lib/whatsapp'
 import type { Product } from '@/types'
+
+const HANDOFF_URL = `${whatsappBaseUrl()}?text=${encodeURIComponent(
+  'Hola Báez! Estaba en la web con el asistente y quiero hacer una consulta.'
+)}`
 
 interface AIModalPlaceholderProps {
   open: boolean
@@ -20,6 +24,7 @@ interface ChatMessage {
   text?: string
   image?: string
   products?: Product[]
+  whatsapp?: boolean
 }
 
 const QUICK_PROMPTS = [
@@ -58,11 +63,11 @@ export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderPro
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
   }, [messages, typing])
 
-  function pushAssistant(reply: { text: string; products: Product[] }) {
+  function pushAssistant(reply: { text: string; products: Product[]; whatsapp?: boolean }) {
     setTyping(true)
     setTimeout(() => {
       setTyping(false)
-      setMessages(m => [...m, { id: newId(), role: 'assistant', text: reply.text, products: reply.products }])
+      setMessages(m => [...m, { id: newId(), role: 'assistant', text: reply.text, products: reply.products, whatsapp: reply.whatsapp }])
     }, 750)
   }
 
@@ -102,6 +107,16 @@ export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderPro
             <p className="font-display text-base font-semibold leading-tight">Asistente Báez</p>
             <p className="text-[11px] text-white/70 leading-tight">En línea · responde al instante</p>
           </div>
+          <a
+            href={HANDOFF_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Hablar con una persona por WhatsApp"
+            className="flex h-9 w-9 items-center justify-center bg-white/15 text-white hover:bg-[#25D366] transition-colors"
+            aria-label="Hablar con una persona por WhatsApp"
+          >
+            <MessageCircle size={18} />
+          </a>
           <button onClick={() => onOpenChange(false)} className="p-1.5 text-white/80 hover:text-white" aria-label="Cerrar">
             <X size={20} />
           </button>
@@ -135,6 +150,17 @@ export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderPro
                       <ProductMiniCard key={p.id} product={p} onNavigate={() => onOpenChange(false)} />
                     ))}
                   </div>
+                )}
+                {msg.whatsapp && (
+                  <a
+                    href={HANDOFF_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 flex w-full items-center justify-center gap-2 bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#1fba58] transition-colors"
+                  >
+                    <MessageCircle size={16} />
+                    Hablar por WhatsApp (+54 9 11 6365-8651)
+                  </a>
                 )}
               </div>
             </div>

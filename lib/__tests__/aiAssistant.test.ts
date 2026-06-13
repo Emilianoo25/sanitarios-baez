@@ -27,6 +27,12 @@ describe('asistente — base de conocimiento', () => {
     expect(r.products.length).toBeGreaterThan(0)
   })
 
+  it('deriva a WhatsApp cuando piden hablar con una persona', () => {
+    const r = getTextRecommendation('quiero hablar con una persona')
+    expect(r.whatsapp).toBe(true)
+    expect(r.text).toMatch(/WhatsApp/i)
+  })
+
   it('da guía cuando no entiende, sin tirar productos al azar', () => {
     const r = getTextRecommendation('cuanto pesa un elefante')
     expect(r.products.length).toBe(0)
