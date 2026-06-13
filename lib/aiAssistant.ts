@@ -1,4 +1,5 @@
 import { getAllProducts } from '@/lib/products'
+import { KNOWLEDGE_BASE } from '@/lib/knowledgeBase'
 import type { Product } from '@/types'
 
 export interface AssistantReply {
@@ -22,10 +23,41 @@ function normalize(s: string): string {
     .replace(/[̀-ͯ]/g, '')
 }
 
+/** Busca la mejor coincidencia en la base de conocimiento. */
+function matchKnowledge(q: string): { answer: string; category?: string; score: number } | null {
+  let best: { answer: string; category?: string; score: number } | null = null
+  for (const entry of KNOWLEDGE_BASE) {
+    let score = 0
+    for (const kw of entry.keywords) {
+      if (q.includes(normalize(kw))) score += kw.includes(' ') ? 2 : 1
+    }
+    if (score > 0 && (!best || score > best.score)) {
+      best = { answer: entry.answer, category: entry.category, score }
+    }
+  }
+  return best
+}
+
+// Pedido explícito de producto (quiere que le mostremos algo para comprar).
+const PRODUCT_INTENT =
+  /(necesito|busco|mostrame|muestrame|dame|pasame|comprar|comprame|cotiza|presupuesto|recomendame|precio|cuanto sale|cuanto cuesta|cuanto vale)/
+// Marcadores de pregunta (quiere información, no necesariamente comprar).
+const QUESTION_INTENT =
+  /(que |qué|como|cómo|cual|cuál|por que|por qué|diferencia|sirve|significa|conviene|es mejor|explica|contame|sabes|saber|para que|cuando)/
+
 /** Recomendación a partir de texto del usuario. */
 export function getTextRecommendation(input: string): AssistantReply {
   const q = normalize(input)
   const all = getAllProducts()
+
+  // 1) ¿Es una pregunta que responde la base de conocimiento?
+  const kb = matchKnowledge(q)
+  const productIntent = PRODUCT_INTENT.test(q)
+  const isQuestion = QUESTION_INTENT.test(q)
+  if (kb && (!productIntent || isQuestion)) {
+    const related = kb.category ? all.filter(p => p.category === kb.category).slice(0, 2) : []
+    return { text: kb.answer, products: related }
+  }
 
   // Marca mencionada
   const brand = BRANDS.find(b => q.includes(b))
@@ -67,7 +99,14 @@ export function getTextRecommendation(input: string): AssistantReply {
   if (!bestCat && !brand && !wantsCheap && !wantsPremium && !wantsPromo) {
     if (/(hola|buenas|buen dia|que tal|ayuda|ayudame)/.test(q)) {
       return {
-        text: '¡Hola! Soy el asistente de Sanitarios Báez. Contame qué estás buscando (una grifería, un inodoro, una ducha…) o mandame una foto de tu ambiente y te recomiendo el producto ideal.',
+        text: '¡Hola! Soy el asistente de Sanitarios Báez. Puedo responderte dudas sobre griferías, inodoros, bachas y duchas, o recomendarte productos. Por ejemplo: "¿qué diferencia hay entre monocomando y bicomando?" o "necesito una grifería para la cocina".',
+        products: [],
+      }
+    }
+    if (!productIntent) {
+      // No hubo match en la base de conocimiento ni intención de compra clara.
+      return {
+        text: 'Mmm, esa no la tengo bien cubierta todavía. Puedo ayudarte con dudas sobre griferías, inodoros, bidets, bachas y duchas (materiales, medidas, instalación, marcas) o recomendarte un producto. Si es algo más específico, lo mejor es consultarlo por WhatsApp con el equipo de Báez.',
         products: [],
       }
     }
