@@ -15,9 +15,9 @@ export function BrandLogo({ className }: BrandLogoProps) {
       <Image
         src="/logo.png"
         alt="Sanitarios Báez"
-        width={160}
-        height={60}
-        className="h-10 w-auto"
+        width={808}
+        height={436}
+        className="h-9 w-auto sm:h-11"
         priority
       />
     </Link>
