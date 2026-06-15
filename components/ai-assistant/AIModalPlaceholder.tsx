@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Sparkles, X, Send, ImagePlus, MessageCircle } from 'lucide-react'
 import { getTextRecommendation, getPhotoRecommendation } from '@/lib/aiAssistant'
+import { getProductBySlug } from '@/lib/products'
 import { whatsappUrl, whatsappBaseUrl } from '@/lib/whatsapp'
 import type { Product } from '@/types'
 
@@ -63,28 +64,64 @@ export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderPro
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
   }, [messages, typing])
 
-  function pushAssistant(reply: { text: string; products: Product[]; whatsapp?: boolean }) {
+  function historyFrom(extra?: { role: 'user' | 'assistant'; text: string }) {
+    const turns = messages
+      .filter(m => m.text)
+      .map(m => ({ role: m.role, text: m.text as string }))
+    if (extra) turns.push(extra)
+    return turns
+  }
+
+  async function runAssistant(
+    history: { role: 'user' | 'assistant'; text: string }[],
+    image?: { data: string; mediaType: string }
+  ) {
     setTyping(true)
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/assistant', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ history, image: image ?? null }),
+      })
+      if (!res.ok) throw new Error('api')
+      const data = await res.json()
+      const products = Array.isArray(data.slugs)
+        ? (data.slugs.map((s: string) => getProductBySlug(s)).filter(Boolean) as Product[])
+        : []
+      setMessages(m => [...m, { id: newId(), role: 'assistant', text: data.text || '…', products }])
+    } catch {
+      // Fallback al motor local (sin costo) si la IA no responde
+      const fb = image
+        ? getPhotoRecommendation()
+        : getTextRecommendation(history[history.length - 1]?.text ?? '')
+      setMessages(m => [...m, { id: newId(), role: 'assistant', text: fb.text, products: fb.products, whatsapp: fb.whatsapp }])
+    } finally {
       setTyping(false)
-      setMessages(m => [...m, { id: newId(), role: 'assistant', text: reply.text, products: reply.products, whatsapp: reply.whatsapp }])
-    }, 750)
+    }
   }
 
   function sendText(value: string) {
     const text = value.trim()
-    if (!text) return
+    if (!text || typing) return
+    const history = historyFrom({ role: 'user', text })
     setMessages(m => [...m, { id: newId(), role: 'user', text }])
     setInput('')
-    pushAssistant(getTextRecommendation(text))
+    runAssistant(history)
   }
 
   function onPhoto(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (!file) return
-    const url = URL.createObjectURL(file)
-    setMessages(m => [...m, { id: newId(), role: 'user', image: url }])
-    pushAssistant(getPhotoRecommendation())
+    const reader = new FileReader()
+    reader.onload = () => {
+      const dataUrl = reader.result as string
+      const base64 = dataUrl.slice(dataUrl.indexOf(',') + 1)
+      const mediaType = dataUrl.slice(5, dataUrl.indexOf(';'))
+      const history = historyFrom()
+      setMessages(m => [...m, { id: newId(), role: 'user', image: dataUrl }])
+      runAssistant(history, { data: base64, mediaType })
+    }
+    reader.readAsDataURL(file)
     e.target.value = ''
   }
 
