@@ -19,6 +19,10 @@
     "specs": [
       { "key": "Tipo", "value": "Monocomando" },
       { "key": "Acabado", "value": "Cromo" },
+      { "key": "Material", "value": "Cuerpo de bronce" },
+      { "key": "Altura del pico", "value": "11 cm" },
+      { "key": "Conexión", "value": "Flexibles 1/2\"" },
+      { "key": "Cartucho", "value": "Cerámico 35 mm" },
       { "key": "Garantía", "value": "5 años" }
     ],
     "inStock": true,
@@ -47,7 +51,11 @@
     "specs": [
       { "key": "Tipo", "value": "Largo con depósito" },
       { "key": "Sistema", "value": "Dual flush 3/6L" },
-      { "key": "Color", "value": "Blanco" }
+      { "key": "Color", "value": "Blanco" },
+      { "key": "Material", "value": "Loza sanitaria" },
+      { "key": "Medidas", "value": "65 × 36 × 78 cm (largo × ancho × alto)" },
+      { "key": "Distancia a pared", "value": "Inodoro largo (~60 cm)" },
+      { "key": "Garantía", "value": "5 años" }
     ],
     "inStock": true,
     "featured": true,
@@ -73,8 +81,11 @@
     "description": "Bacha redonda de apoyar en porcelana blanca. Diseño minimalista ideal para baños modernos.",
     "specs": [
       { "key": "Material", "value": "Porcelana" },
-      { "key": "Diámetro", "value": "38cm" },
-      { "key": "Tipo", "value": "De apoyar" }
+      { "key": "Diámetro", "value": "38 cm" },
+      { "key": "Altura", "value": "14 cm" },
+      { "key": "Tipo", "value": "De apoyar" },
+      { "key": "Color", "value": "Blanco" },
+      { "key": "Desagüe", "value": "Sin orificio de rebalse" }
     ],
     "inStock": true,
     "featured": true,
@@ -101,7 +112,11 @@
     "specs": [
       { "key": "Tipo", "value": "Monocomando" },
       { "key": "Acabado", "value": "Cromo" },
-      { "key": "Caño", "value": "Alto giratorio" }
+      { "key": "Material", "value": "Cuerpo de bronce" },
+      { "key": "Caño", "value": "Alto giratorio" },
+      { "key": "Altura del caño", "value": "27 cm" },
+      { "key": "Conexión", "value": "Flexibles 1/2\"" },
+      { "key": "Garantía", "value": "5 años" }
     ],
     "inStock": true,
     "featured": true,
@@ -127,9 +142,11 @@
     ],
     "description": "Receptáculo de ducha en acero porcelanizado. Antideslizante. Medidas 80x80cm.",
     "specs": [
-      { "key": "Medidas", "value": "80x80cm" },
+      { "key": "Medidas", "value": "80 × 80 cm" },
+      { "key": "Altura del borde", "value": "9 cm" },
       { "key": "Material", "value": "Acero porcelanizado" },
-      { "key": "Acabado", "value": "Antideslizante" }
+      { "key": "Acabado", "value": "Antideslizante" },
+      { "key": "Color", "value": "Blanco" }
     ],
     "inStock": true,
     "featured": true,
@@ -155,7 +172,10 @@
     "description": "Juego completo para ducha con transferencia. Válvula de dos llaves, ducha de mano y rociador superior. Garantía FV 5 años.",
     "specs": [
       { "key": "Tipo", "value": "Con transferencia" },
-      { "key": "Incluye", "value": "Ducha de mano + rociador" },
+      { "key": "Acabado", "value": "Cromo" },
+      { "key": "Material", "value": "Cuerpo de bronce" },
+      { "key": "Incluye", "value": "Ducha de mano + rociador superior" },
+      { "key": "Conexión", "value": "1/2\"" },
       { "key": "Garantía", "value": "5 años" }
     ],
     "inStock": true,

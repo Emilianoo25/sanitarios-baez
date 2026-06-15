@@ -47,6 +47,50 @@ const PRODUCT_INTENT =
 const QUESTION_INTENT =
   /(que |qué|como|cómo|cual|cuál|por que|por qué|diferencia|sirve|significa|conviene|es mejor|explica|contame|sabes|saber|para que|cuando)/
 
+// Pregunta sobre una característica/medida de un producto.
+const SPEC_QUERY =
+  /(medida|dimension|tamano|alto|altura|ancho|largo|diametro|material|peso|color|conexion|rosca|garantia|acabado|cano|caño|cuanto mide|de que esta hecho|especificacion|ficha tecnica|caracteristica)/
+
+const NAME_STOPWORDS = new Set(['para', 'con', 'los', 'las', 'del', 'monocomando', 'griferia', 'juego', 'bacha', 'redonda'])
+
+/** Busca el producto mencionado en la consulta por palabras de su nombre. */
+function findProductInQuery(q: string) {
+  const all = getAllProducts()
+  let best: ReturnType<typeof getAllProducts>[number] | null = null
+  let bestScore = 0
+  for (const p of all) {
+    const tokens = normalize(p.name)
+      .split(/\s+/)
+      .filter(t => t.length > 3 && !NAME_STOPWORDS.has(t))
+    let score = tokens.reduce((acc, t) => (q.includes(t) ? acc + 1 : acc), 0)
+    if (q.includes(normalize(p.subcategory))) score += 1
+    if (score > bestScore) {
+      bestScore = score
+      best = p
+    }
+  }
+  return bestScore >= 1 ? best : null
+}
+
+/** Arma la respuesta con la ficha técnica, enfocando el dato pedido si lo hay. */
+function buildSpecAnswer(p: Product, q: string): string {
+  const ficha = p.specs.map(s => `• ${s.key}: ${s.value}`).join('\n')
+  const find = (re: RegExp) => p.specs.find(s => re.test(normalize(s.key)))
+  let focus: { key: string; value: string } | undefined
+  if (/medida|dimension|tamano|alto|altura|ancho|largo|diametro|cuanto mide/.test(q))
+    focus = find(/medida|dimension|diametro|alto|altura|ancho|largo|distancia/)
+  else if (/material|de que esta hecho/.test(q)) focus = find(/material/)
+  else if (/garantia/.test(q)) focus = find(/garantia/)
+  else if (/color/.test(q)) focus = find(/color/)
+  else if (/conexion|rosca/.test(q)) focus = find(/conexion|rosca/)
+  else if (/acabado/.test(q)) focus = find(/acabado/)
+
+  if (focus) {
+    return `${p.name} — ${focus.key}: ${focus.value}.\n\nFicha completa:\n${ficha}`
+  }
+  return `Ficha técnica de ${p.name}:\n${ficha}`
+}
+
 /** Recomendación a partir de texto del usuario. */
 export function getTextRecommendation(input: string): AssistantReply {
   const q = normalize(input)
@@ -58,6 +102,14 @@ export function getTextRecommendation(input: string): AssistantReply {
       text: 'Te paso con el equipo de Sanitarios Báez para que te atienda una persona. Tocá el botón y seguís la charla por WhatsApp 👇',
       products: [],
       whatsapp: true,
+    }
+  }
+
+  // 0.5) ¿Pregunta por una característica/medida de un producto puntual?
+  if (SPEC_QUERY.test(q)) {
+    const prod = findProductInQuery(q)
+    if (prod) {
+      return { text: buildSpecAnswer(prod, q), products: [prod] }
     }
   }
 
