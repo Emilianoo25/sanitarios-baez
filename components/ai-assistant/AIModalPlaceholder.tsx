@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Sparkles, X, Send, ImagePlus, MessageCircle } from 'lucide-react'
+import { Sparkles, X, Send, ImagePlus, Camera, MessageCircle } from 'lucide-react'
 import { getTextRecommendation, getPhotoRecommendation } from '@/lib/aiAssistant'
 import { getProductBySlug } from '@/lib/products'
 import { whatsappUrl, whatsappBaseUrl } from '@/lib/whatsapp'
@@ -49,7 +49,9 @@ export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderPro
   const [messages, setMessages] = useState<ChatMessage[]>([GREETING])
   const [input, setInput] = useState('')
   const [typing, setTyping] = useState(false)
+  const [pendingImage, setPendingImage] = useState<{ dataUrl: string; base64: string; mediaType: string } | null>(null)
   const fileRef = useRef<HTMLInputElement>(null)
+  const cameraRef = useRef<HTMLInputElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => { setMounted(true) }, [])
@@ -109,20 +111,33 @@ export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderPro
     runAssistant(history)
   }
 
-  function onPhoto(e: React.ChangeEvent<HTMLInputElement>) {
+  // Adjunta la foto a la previsualización (NO la manda).
+  function onPickFile(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0]
     if (!file) return
     const reader = new FileReader()
     reader.onload = () => {
       const dataUrl = reader.result as string
-      const base64 = dataUrl.slice(dataUrl.indexOf(',') + 1)
-      const mediaType = dataUrl.slice(5, dataUrl.indexOf(';'))
-      const history = historyFrom()
-      setMessages(m => [...m, { id: newId(), role: 'user', image: dataUrl }])
-      runAssistant(history, { data: base64, mediaType })
+      setPendingImage({
+        dataUrl,
+        base64: dataUrl.slice(dataUrl.indexOf(',') + 1),
+        mediaType: dataUrl.slice(5, dataUrl.indexOf(';')),
+      })
     }
     reader.readAsDataURL(file)
     e.target.value = ''
+  }
+
+  // Envía texto y/o la foto adjunta juntos.
+  function handleSend() {
+    const text = input.trim()
+    if ((!text && !pendingImage) || typing) return
+    const history = historyFrom(text ? { role: 'user', text } : undefined)
+    setMessages(m => [...m, { id: newId(), role: 'user', text: text || undefined, image: pendingImage?.dataUrl }])
+    const img = pendingImage ? { data: pendingImage.base64, mediaType: pendingImage.mediaType } : undefined
+    setInput('')
+    setPendingImage(null)
+    runAssistant(history, img)
   }
 
   if (!mounted || !open) return null
@@ -229,28 +244,56 @@ export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderPro
 
         {/* Input */}
         <div className="border-t border-border bg-white px-3 py-2.5">
+          {/* Previsualización de la foto adjunta */}
+          {pendingImage && (
+            <div className="mb-2 flex items-center gap-2">
+              <div className="relative h-16 w-16 overflow-hidden border border-border">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={pendingImage.dataUrl} alt="Foto adjunta" className="h-full w-full object-cover" />
+                <button
+                  type="button"
+                  onClick={() => setPendingImage(null)}
+                  aria-label="Quitar foto"
+                  className="absolute right-0.5 top-0.5 flex h-5 w-5 items-center justify-center bg-black/60 text-white hover:bg-black/80"
+                >
+                  <X size={12} />
+                </button>
+              </div>
+              <span className="text-xs text-muted">Foto lista. Escribí una descripción (opcional) y enviá.</span>
+            </div>
+          )}
+
           <form
-            onSubmit={e => { e.preventDefault(); sendText(input) }}
-            className="flex items-center gap-2"
+            onSubmit={e => { e.preventDefault(); handleSend() }}
+            className="flex items-center gap-1.5"
           >
-            <input ref={fileRef} type="file" accept="image/*" onChange={onPhoto} className="hidden" />
+            <input ref={fileRef} type="file" accept="image/*" onChange={onPickFile} className="hidden" />
+            <input ref={cameraRef} type="file" accept="image/*" capture="environment" onChange={onPickFile} className="hidden" />
             <button
               type="button"
               onClick={() => fileRef.current?.click()}
-              className="flex h-10 w-10 shrink-0 items-center justify-center text-primary hover:bg-primary/10 transition-colors"
-              aria-label="Adjuntar foto"
+              className="flex h-10 w-9 shrink-0 items-center justify-center text-primary hover:bg-primary/10 transition-colors"
+              aria-label="Adjuntar foto de la galería"
             >
               <ImagePlus size={20} />
+            </button>
+            <button
+              type="button"
+              onClick={() => cameraRef.current?.click()}
+              className="flex h-10 w-9 shrink-0 items-center justify-center text-primary hover:bg-primary/10 transition-colors"
+              aria-label="Sacar foto con la cámara"
+            >
+              <Camera size={20} />
             </button>
             <input
               value={input}
               onChange={e => setInput(e.target.value)}
-              placeholder="Escribí tu consulta…"
+              placeholder={pendingImage ? 'Describí lo que necesitás…' : 'Escribí tu consulta…'}
               className="min-w-0 flex-1 border border-border px-3 py-2.5 text-sm focus:outline-none focus:border-primary"
             />
             <button
               type="submit"
-              disabled={!input.trim()}
+              disabled={!input.trim() && !pendingImage}
               className="flex h-10 w-10 shrink-0 items-center justify-center bg-accent text-white hover:bg-accent-hover disabled:opacity-40 transition-colors"
               aria-label="Enviar"
             >
