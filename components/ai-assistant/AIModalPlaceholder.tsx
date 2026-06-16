@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Sparkles, X, Send, ImagePlus, Camera, MessageCircle } from 'lucide-react'
-import { getTextRecommendation, getPhotoRecommendation } from '@/lib/aiAssistant'
+import { getTextRecommendation } from '@/lib/aiAssistant'
 import { getProductBySlug } from '@/lib/products'
 import { whatsappUrl, whatsappBaseUrl } from '@/lib/whatsapp'
 import type { Product } from '@/types'
@@ -92,11 +92,17 @@ export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderPro
         : []
       setMessages(m => [...m, { id: newId(), role: 'assistant', text: data.text || '…', products }])
     } catch {
-      // Fallback al motor local (sin costo) si la IA no responde
-      const fb = image
-        ? getPhotoRecommendation()
-        : getTextRecommendation(history[history.length - 1]?.text ?? '')
-      setMessages(m => [...m, { id: newId(), role: 'assistant', text: fb.text, products: fb.products, whatsapp: fb.whatsapp }])
+      // Fallback si la IA no responde. Para fotos no forzamos una recomendación.
+      if (image) {
+        setMessages(m => [...m, {
+          id: newId(),
+          role: 'assistant',
+          text: 'No pude analizar la imagen en este momento. Probá de nuevo en un ratito, o contame con palabras qué estás buscando y te ayudo igual.',
+        }])
+      } else {
+        const fb = getTextRecommendation(history[history.length - 1]?.text ?? '')
+        setMessages(m => [...m, { id: newId(), role: 'assistant', text: fb.text, products: fb.products, whatsapp: fb.whatsapp }])
+      }
     } finally {
       setTyping(false)
     }
