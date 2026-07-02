@@ -7,8 +7,8 @@ import {
 } from '../products'
 
 describe('getAllProducts', () => {
-  it('returns all 6 products', () => {
-    expect(getAllProducts()).toHaveLength(6)
+  it('returns all 25 products', () => {
+    expect(getAllProducts()).toHaveLength(25)
   })
   it('returns products with required fields', () => {
     getAllProducts().forEach(p => {
@@ -22,8 +22,8 @@ describe('getAllProducts', () => {
 
 describe('getProductBySlug', () => {
   it('finds product by slug', () => {
-    const product = getProductBySlug('griferia-fv-arizona-monocomando')
-    expect(product?.name).toBe('FV Arizona Monocomando Lavatorio')
+    const product = getProductBySlug('griferia-lavatorio-alto-rio')
+    expect(product?.name).toBe('Grifería Monocomando Lavatorio Alto — Río')
   })
   it('returns undefined for unknown slug', () => {
     expect(getProductBySlug('no-existe')).toBeUndefined()

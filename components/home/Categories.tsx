@@ -15,9 +15,9 @@ const CATEGORIES = [
     image: 'https://images.unsplash.com/photo-1542855368-ca6ea825bca2?w=600&q=80',
   },
   {
-    slug: 'sanitarios',
-    label: 'Sanitarios',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600&q=80',
+    slug: 'accesorios',
+    label: 'Accesorios',
+    image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600&q=80',
   },
   {
     slug: 'bachas',

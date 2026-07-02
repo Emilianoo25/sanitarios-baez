@@ -8,7 +8,7 @@ export interface ProductInstallments {
   amount: number
 }
 
-export type ProductCategory = 'griferias' | 'sanitarios' | 'bachas' | 'duchas'
+export type ProductCategory = 'griferias' | 'sanitarios' | 'bachas' | 'duchas' | 'accesorios'
 
 export interface Product {
   id: string

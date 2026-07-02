@@ -8,7 +8,7 @@ import type { ProductCategory } from '@/types'
 
 const CATEGORIES: { value: ProductCategory; label: string }[] = [
   { value: 'griferias', label: 'Griferías' },
-  { value: 'sanitarios', label: 'Sanitarios' },
+  { value: 'accesorios', label: 'Accesorios' },
   { value: 'bachas', label: 'Bachas' },
   { value: 'duchas', label: 'Duchas' },
 ]

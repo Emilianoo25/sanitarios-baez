@@ -12,7 +12,7 @@ interface FilterChipsProps {
 
 const CATEGORY_LABELS: Record<string, string> = {
   griferias: 'Griferías',
-  sanitarios: 'Sanitarios',
+  accesorios: 'Accesorios',
   bachas: 'Bachas',
   duchas: 'Duchas',
 }

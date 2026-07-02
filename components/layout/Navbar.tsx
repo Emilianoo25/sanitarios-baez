@@ -9,7 +9,7 @@ import { useCart } from '@/context/CartContext'
 
 const NAV_LINKS = [
   { label: 'Griferías', href: '/productos?categoria=griferias' },
-  { label: 'Sanitarios', href: '/productos?categoria=sanitarios' },
+  { label: 'Accesorios', href: '/productos?categoria=accesorios' },
   { label: 'Bachas', href: '/productos?categoria=bachas' },
   { label: 'Duchas', href: '/productos?categoria=duchas' },
   { label: 'Obras', href: '/obras' },

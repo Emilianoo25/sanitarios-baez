@@ -4,7 +4,7 @@ import { BrandLogo } from '@/components/common/BrandLogo'
 const FOOTER_LINKS = {
   productos: [
     { label: 'Griferías', href: '/productos?categoria=griferias' },
-    { label: 'Sanitarios', href: '/productos?categoria=sanitarios' },
+    { label: 'Accesorios', href: '/productos?categoria=accesorios' },
     { label: 'Bachas', href: '/productos?categoria=bachas' },
     { label: 'Duchas', href: '/productos?categoria=duchas' },
   ],

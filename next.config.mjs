@@ -7,6 +7,8 @@ const nextConfig = {
       { protocol: 'https', hostname: 'blaistenio.vtexassets.com' },
       { protocol: 'https', hostname: 'griferiapeirano.com' },
       { protocol: 'https', hostname: 'grupocanarias.com.ar' },
+      { protocol: 'https', hostname: 'http2.mlstatic.com' },
+      { protocol: 'https', hostname: 'mla-s2-p.mlstatic.com' },
       { protocol: 'https', hostname: 'images.unsplash.com' },
       { protocol: 'https', hostname: 'plus.unsplash.com' },
     ],
