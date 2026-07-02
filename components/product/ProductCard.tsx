@@ -44,7 +44,7 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
         href={`/productos/${product.slug}`}
         className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
       >
-        <div className="relative aspect-[4/3] bg-gradient-to-br from-white to-bone overflow-hidden">
+        <div className="relative aspect-[4/3] bg-white overflow-hidden">
           <Image
             src={product.images[0]}
             alt={product.name}
