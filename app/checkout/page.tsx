@@ -42,9 +42,8 @@ export default function CheckoutPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           items: items.map(i => ({
-            title: i.product.name,
+            id: i.product.id,
             quantity: i.quantity,
-            unit_price: i.product.price,
           })),
           payer: { name: `${form.nombre} ${form.apellidos}`.trim(), email: form.email },
         }),

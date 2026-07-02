@@ -27,20 +27,20 @@ describe('asistente — base de conocimiento', () => {
     expect(r.products.length).toBeGreaterThan(0)
   })
 
-  it('responde medidas de un producto puntual', () => {
-    const r = getTextRecommendation('qué medidas tiene el receptáculo de ducha?')
-    expect(r.text).toMatch(/80 × 80 cm/i)
-    expect(r.products[0]?.slug).toBe('ferrum-receptaculo-ducha-80x80')
+  it('responde material de un producto puntual', () => {
+    const r = getTextRecommendation('de qué material es la grifería Steel?')
+    expect(r.text).toMatch(/acero/i)
+    expect(r.products[0]?.slug).toBe('griferia-cocina-steel-20-205')
   })
 
-  it('responde material de la bacha Bari', () => {
-    const r = getTextRecommendation('de qué material es la bacha Bari?')
-    expect(r.text).toMatch(/porcelana/i)
+  it('responde el color de la grifería Wave', () => {
+    const r = getTextRecommendation('de qué color es la Wave?')
+    expect(r.text).toMatch(/negro/i)
   })
 
-  it('responde altura del caño de la grifería de cocina', () => {
-    const r = getTextRecommendation('cuánto mide el caño de la Cuina?')
-    expect(r.text).toMatch(/27 cm/i)
+  it('responde la garantía de un producto puntual', () => {
+    const r = getTextRecommendation('qué garantía tiene la grifería Valencia?')
+    expect(r.text).toMatch(/garantía oficial/i)
   })
 
   it('deriva a WhatsApp cuando piden hablar con una persona', () => {

@@ -2,12 +2,16 @@ import { NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
 import { getAllProducts } from '@/lib/products'
 import { KNOWLEDGE_BASE } from '@/lib/knowledgeBase'
+import { checkRateLimit, getClientIp } from '@/lib/rateLimit'
 
 export const runtime = 'nodejs'
 export const maxDuration = 30
 
 const MODEL = 'claude-haiku-4-5'
 const BAEZ_PHONE = '+54 9 11 6365-8651'
+const MAX_TEXT = 4000
+const MAX_IMAGE_BYTES = 5 * 1024 * 1024
+const ALLOWED_MEDIA = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
 
 interface ChatTurn {
   role: 'user' | 'assistant'
@@ -75,6 +79,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'IA no configurada (falta ANTHROPIC_API_KEY)' }, { status: 503 })
   }
 
+  if (!(await checkRateLimit('assistant', getClientIp(req)))) {
+    return NextResponse.json({ error: 'Demasiadas consultas. Esperá un momento.' }, { status: 429 })
+  }
+
   let body: AssistantBody
   try {
     body = await req.json()
@@ -82,9 +90,23 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Body inválido' }, { status: 400 })
   }
 
-  const history = Array.isArray(body.history) ? body.history.slice(-12) : []
+  const history = (Array.isArray(body.history) ? body.history : [])
+    .filter(t => t && (t.role === 'user' || t.role === 'assistant') && typeof t.text === 'string')
+    .slice(-12)
+    .map(t => ({ role: t.role, text: t.text.slice(0, MAX_TEXT) }))
   if (!history.length && !body.image) {
     return NextResponse.json({ error: 'Sin mensaje' }, { status: 400 })
+  }
+
+  // Validar imagen: mediaType permitido y tamaño acotado (base64 → bytes).
+  if (body.image?.data) {
+    if (!ALLOWED_MEDIA.includes(body.image.mediaType)) {
+      return NextResponse.json({ error: 'Formato de imagen no soportado' }, { status: 400 })
+    }
+    const bytes = Math.floor((body.image.data.length * 3) / 4)
+    if (bytes > MAX_IMAGE_BYTES) {
+      return NextResponse.json({ error: 'La imagen es demasiado grande (máx 5 MB)' }, { status: 413 })
+    }
   }
 
   const messages: Anthropic.MessageParam[] = history.map(t => ({
