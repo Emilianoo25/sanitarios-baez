@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { ChevronRight, CreditCard, Building2, Banknote, Check } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
+import { salePrice } from '@/lib/price'
 
 const PROVINCIAS = [
   'Ciudad Autónoma de Buenos Aires','Buenos Aires','Catamarca','Chaco','Chubut',
@@ -84,7 +85,7 @@ export default function CheckoutPage() {
       form.empresa ? `*Empresa:* ${form.empresa}` : '',
       ``,
       `*Productos:*`,
-      ...items.map(i => `• ${i.product.name} × ${i.quantity} — $${(i.product.price * i.quantity).toLocaleString('es-AR')}`),
+      ...items.map(i => `• ${i.product.name} × ${i.quantity} — $${(salePrice(i.product) * i.quantity).toLocaleString('es-AR')}`),
       ``,
       `*Método de pago:* ${payment === 'transferencia' ? 'Transferencia bancaria (-10%)' : 'Efectivo'}`,
       `*Total:* $${finalPrice.toLocaleString('es-AR')}`,
@@ -248,7 +249,7 @@ export default function CheckoutPage() {
                   {items.map(({ product, quantity }) => (
                     <div key={product.id} className="flex justify-between">
                       <span className="text-gray-600 truncate mr-2 max-w-[180px]">{product.name} × {quantity}</span>
-                      <span className="font-medium shrink-0">${(product.price * quantity).toLocaleString('es-AR')}</span>
+                      <span className="font-medium shrink-0">${(salePrice(product) * quantity).toLocaleString('es-AR')}</span>
                     </div>
                   ))}
                 </div>

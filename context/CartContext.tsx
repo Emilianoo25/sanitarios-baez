@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useContext, useState, useEffect, type ReactNode } from 'react'
+import { salePrice } from '@/lib/price'
 import type { Product } from '@/types'
 
 export interface CartItem {
@@ -82,7 +83,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }
 
   const totalItems = items.reduce((s, i) => s + i.quantity, 0)
-  const totalPrice = items.reduce((s, i) => s + i.product.price * i.quantity, 0)
+  const totalPrice = items.reduce((s, i) => s + salePrice(i.product) * i.quantity, 0)
 
   return (
     <CartContext.Provider value={{ items, totalItems, totalPrice, isOpen, openCart, closeCart, addToCart, removeFromCart, updateQuantity, clearCart }}>

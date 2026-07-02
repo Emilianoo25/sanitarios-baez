@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { Container } from '@/components/common/Container'
 import { Section } from '@/components/common/Section'
-import { getAllProducts } from '@/lib/products'
+import type { Product } from '@/types'
 
 const CATEGORIES = [
   {
@@ -31,8 +31,8 @@ const CATEGORIES = [
   },
 ]
 
-export function Categories() {
-  const allProducts = getAllProducts()
+export function Categories({ products }: { products: Product[] }) {
+  const allProducts = products
 
   return (
     <Section className="bg-bone">

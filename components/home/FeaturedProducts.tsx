@@ -2,17 +2,17 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { getFeaturedProducts } from '@/lib/products'
 import { ProductGrid } from '@/components/product/ProductGrid'
 import { AIModalPlaceholder } from '@/components/ai-assistant/AIModalPlaceholder'
 import { Container } from '@/components/common/Container'
 import { Section } from '@/components/common/Section'
+import type { Product } from '@/types'
 
-const PREMIUM_SLUG = 'fv-allegro-columna-ducha-termostatica'
+const PREMIUM_SLUG = 'combo-bano-beat-lavatorio-pared-bidet'
 
-export function FeaturedProducts() {
+export function FeaturedProducts({ products }: { products: Product[] }) {
   const [aiOpen, setAiOpen] = useState(false)
-  const featured = getFeaturedProducts()
+  const featured = products
 
   return (
     <Section>

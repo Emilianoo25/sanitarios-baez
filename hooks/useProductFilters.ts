@@ -1,8 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
-import { getAllProducts, getPriceRange } from '@/lib/products'
-import type { ProductCategory } from '@/types'
+import type { Product, ProductCategory } from '@/types'
 
 export interface FilterState {
   categories: ProductCategory[]
@@ -12,9 +11,11 @@ export interface FilterState {
   sortBy: 'featured' | 'price-asc' | 'price-desc'
 }
 
-export function useProductFilters() {
-  const allProducts = getAllProducts()
-  const { max: globalMax } = getPriceRange()
+export function useProductFilters(allProducts: Product[]) {
+  const globalMax = useMemo(
+    () => (allProducts.length ? Math.max(...allProducts.map(p => p.price)) : 0),
+    [allProducts]
+  )
 
   const [filters, setFilters] = useState<FilterState>({
     categories: [],

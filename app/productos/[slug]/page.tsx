@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
-import { getProductBySlug, getRelatedProducts, getAllProducts } from '@/lib/products'
+import { getAllProducts } from '@/lib/products'
+import { getCatalog } from '@/lib/catalog'
+import { hasDiscount, salePrice } from '@/lib/price'
 import { ProductGallery } from '@/components/product/ProductGallery'
 import { ProductSpecs } from '@/components/product/ProductSpecs'
 import { ProductActionsWrapper } from '@/components/product/ProductActionsWrapper'
@@ -18,11 +20,14 @@ export async function generateStaticParams() {
   return products.map(p => ({ slug: p.slug }))
 }
 
-export default function ProductoPage({ params }: Props) {
-  const product = getProductBySlug(params.slug)
+export default async function ProductoPage({ params }: Props) {
+  const catalog = await getCatalog()
+  const product = catalog.find(p => p.slug === params.slug)
   if (!product) notFound()
 
-  const related = getRelatedProducts(product)
+  const related = catalog
+    .filter(p => p.category === product.category && p.id !== product.id)
+    .slice(0, 4)
 
   return (
     <div className="min-h-screen bg-white">
@@ -64,9 +69,21 @@ export default function ProductoPage({ params }: Props) {
             </div>
 
             <div>
-              <p className="font-display text-4xl font-medium text-primary">
-                ${product.price.toLocaleString('es-AR')}
-              </p>
+              <div className="flex items-baseline gap-3">
+                <p className="font-display text-4xl font-medium text-primary">
+                  ${salePrice(product).toLocaleString('es-AR')}
+                </p>
+                {hasDiscount(product) && (
+                  <>
+                    <span className="text-lg text-muted line-through">
+                      ${product.price.toLocaleString('es-AR')}
+                    </span>
+                    <span className="bg-accent px-2 py-0.5 text-xs font-bold text-white">
+                      -{product.discount}%
+                    </span>
+                  </>
+                )}
+              </div>
               <p className="text-sm text-muted mt-1">
                 Efectivo:{' '}
                 <span className="font-medium">

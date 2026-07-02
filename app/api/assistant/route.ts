@@ -1,8 +1,9 @@
 import { NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
-import { getAllProducts } from '@/lib/products'
+import { getCatalog } from '@/lib/catalog'
 import { KNOWLEDGE_BASE } from '@/lib/knowledgeBase'
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit'
+import type { Product } from '@/types'
 
 export const runtime = 'nodejs'
 export const maxDuration = 30
@@ -22,8 +23,7 @@ interface AssistantBody {
   image?: { data: string; mediaType: string } | null
 }
 
-function buildSystemPrompt(): string {
-  const products = getAllProducts()
+function buildSystemPrompt(products: Product[]): string {
   const catalog = products
     .map(p => {
       const promo = p.onPromo && p.discount ? ` [EN PROMO -${p.discount}%]` : ''
@@ -70,8 +70,6 @@ ${catalog}
 === BASE DE CONOCIMIENTO (info de referencia del rubro) ===
 ${kb}`
 }
-
-const SYSTEM_PROMPT = buildSystemPrompt()
 
 export async function POST(req: Request) {
   const apiKey = process.env.ANTHROPIC_API_KEY
@@ -140,12 +138,13 @@ export async function POST(req: Request) {
   }
 
   const client = new Anthropic({ apiKey })
+  const systemPrompt = buildSystemPrompt(await getCatalog())
 
   try {
     const resp = await client.messages.create({
       model: MODEL,
       max_tokens: 600,
-      system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
+      system: [{ type: 'text', text: systemPrompt, cache_control: { type: 'ephemeral' } }],
       messages,
     })
 

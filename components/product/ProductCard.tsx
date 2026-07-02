@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { ProductActions } from './ProductActions'
+import { hasDiscount, salePrice } from '@/lib/price'
 import type { Product } from '@/types'
 
 interface ProductCardProps {
@@ -68,9 +69,16 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
         </Link>
 
         <div className="mt-3">
-          <p className="font-display text-2xl font-semibold tracking-tight text-ink">
-            ${product.price.toLocaleString('es-AR')}
-          </p>
+          <div className="flex items-baseline gap-2">
+            <p className="font-display text-2xl font-semibold tracking-tight text-ink">
+              ${salePrice(product).toLocaleString('es-AR')}
+            </p>
+            {hasDiscount(product) && (
+              <span className="text-sm text-muted line-through">
+                ${product.price.toLocaleString('es-AR')}
+              </span>
+            )}
+          </div>
           <p className="text-xs text-muted mt-1">
             Efectivo ${product.priceCash.toLocaleString('es-AR')} · {product.installments.count}× ${product.installments.amount.toLocaleString('es-AR')}
           </p>

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
-import { getAllProducts } from '@/lib/products'
+import { getCatalog } from '@/lib/catalog'
+import { salePrice } from '@/lib/price'
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit'
 
 interface CartLine {
@@ -44,7 +45,7 @@ export async function POST(req: Request) {
 
   // Precios recalculados en el servidor desde el catálogo: NUNCA confiar en el
   // unit_price que manda el cliente (evita manipular montos).
-  const catalog = new Map(getAllProducts().map(p => [p.id, p]))
+  const catalog = new Map((await getCatalog()).map(p => [p.id, p]))
   const items = []
   for (const line of body.items) {
     const product = catalog.get(String(line?.id))
@@ -56,7 +57,7 @@ export async function POST(req: Request) {
       id: product.id,
       title: product.name.slice(0, 250),
       quantity,
-      unit_price: Math.round(product.price),
+      unit_price: Math.round(salePrice(product)),
       currency_id: 'ARS',
     })
   }
