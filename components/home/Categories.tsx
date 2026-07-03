@@ -12,22 +12,26 @@ const CATEGORIES = [
   {
     slug: 'griferias',
     label: 'Griferías',
-    image: 'https://images.unsplash.com/photo-1542855368-ca6ea825bca2?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1542855368-ca6ea825bca2?w=800&q=80',
+    position: 'center',
   },
   {
     slug: 'accesorios',
     label: 'Accesorios',
-    image: 'https://images.unsplash.com/photo-1620626011761-996317b8d101?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1608651061499-ff031fbf6645?w=800&q=80',
+    position: 'center',
   },
   {
     slug: 'bachas',
     label: 'Bachas',
-    image: 'https://images.unsplash.com/photo-1595428774862-a79ab68dbabb?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1595428774862-a79ab68dbabb?w=800&q=80',
+    position: 'center 40%',
   },
   {
     slug: 'duchas',
     label: 'Duchas',
-    image: 'https://images.unsplash.com/photo-1652662700928-5a4685e87d64?w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1652662700928-5a4685e87d64?w=800&q=80',
+    position: 'center 62%',
   },
 ]
 
@@ -67,7 +71,9 @@ export function Categories({ products }: { products: Product[] }) {
                     alt={cat.label}
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    style={{ objectPosition: cat.position }}
                     sizes="(max-width: 1024px) 50vw, 25vw"
+                    quality={85}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10 transition-colors group-hover:from-primary/90" />
 

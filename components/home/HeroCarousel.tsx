@@ -44,10 +44,10 @@ const SLIDES: Slide[] = [
     subtitle: 'Inodoro + Bidet + Bacha Ferrum. Todo en un solo pedido, instalación incluida.',
     promoPrice: 'Consultá el precio',
     priceNote: 'Financiación hasta 12 cuotas',
-    ctaLabel: 'Ver catálogo de sanitarios',
-    ctaHref: '/productos?categoria=sanitarios',
+    ctaLabel: 'Ver catálogo completo',
+    ctaHref: '/productos',
     image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1400&q=85',
-    imageAlt: 'Baño moderno con sanitarios Ferrum blancos',
+    imageAlt: 'Baño moderno completo',
   },
   {
     id: 'duchas',
@@ -74,7 +74,7 @@ const SLIDES: Slide[] = [
     priceNote: '6 cuotas sin interés',
     ctaLabel: 'Ver catálogo de cocina',
     ctaHref: '/productos?categoria=griferias',
-    image: 'https://images.unsplash.com/photo-1595428774862-a79ab68dbabb?w=1400&q=85',
+    image: 'https://images.unsplash.com/photo-1610276099118-c929abaaa80a?w=1400&q=85',
     imageAlt: 'Cocina moderna con grifería cromada',
   },
 ]
