@@ -70,12 +70,12 @@ export default async function ProductoPage({ params }: Props) {
 
             <div>
               <div className="flex items-baseline gap-3">
-                <p className="font-display text-4xl font-medium text-primary">
+                <p className="font-display text-4xl font-medium text-primary nums-tabular">
                   ${salePrice(product).toLocaleString('es-AR')}
                 </p>
                 {hasDiscount(product) && (
                   <>
-                    <span className="text-lg text-muted line-through">
+                    <span className="text-lg text-muted line-through nums-tabular">
                       ${product.price.toLocaleString('es-AR')}
                     </span>
                     <span className="bg-accent px-2 py-0.5 text-xs font-bold text-white">

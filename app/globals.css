@@ -29,8 +29,25 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-white text-ink font-sans antialiased;
+    font-feature-settings: 'kern', 'liga', 'calt';
+  }
+
+  /* Selección con color de marca — detalle premium */
+  ::selection {
+    background-color: #0A4D8C;
+    color: #ffffff;
+  }
+
+  /* Precios y cifras alineadas como cotas técnicas */
+  .nums-tabular {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: 'tnum';
   }
 }
 
@@ -40,4 +57,9 @@
 }
 .animate-hero-slide {
   animation: heroSlideIn 0.45s ease-out;
+}
+
+/* Easing premium (easeOutExpo) para micro-interacciones */
+.ease-premium {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }

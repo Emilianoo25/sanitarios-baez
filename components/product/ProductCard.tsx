@@ -20,6 +20,11 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
         isPremium ? 'ring-1 ring-accent' : 'border border-border'
       }`}
     >
+      {/* Cota de acento: se traza al pasar el cursor */}
+      <span
+        aria-hidden
+        className="absolute inset-x-0 top-0 z-20 h-[3px] origin-left scale-x-0 bg-accent transition-transform duration-500 ease-premium group-hover:scale-x-100"
+      />
       <div className="absolute top-3 left-3 right-3 z-10 flex items-start justify-between">
         <div className="flex flex-col gap-1.5">
           {product.onPromo && product.discount ? (
@@ -49,7 +54,7 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
             src={product.images[0]}
             alt={product.name}
             fill
-            className="object-contain p-6 transition-transform duration-500 group-hover:scale-[1.07]"
+            className="object-contain p-6 transition-transform duration-500 ease-premium group-hover:scale-[1.07]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             quality={90}
           />
@@ -71,16 +76,16 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
 
         <div className="mt-3">
           <div className="flex items-baseline gap-2">
-            <p className="font-display text-2xl font-semibold tracking-tight text-ink">
+            <p className="font-display text-2xl font-semibold tracking-tight text-ink nums-tabular">
               ${salePrice(product).toLocaleString('es-AR')}
             </p>
             {hasDiscount(product) && (
-              <span className="text-sm text-muted line-through">
+              <span className="text-sm text-muted line-through nums-tabular">
                 ${product.price.toLocaleString('es-AR')}
               </span>
             )}
           </div>
-          <p className="text-xs text-muted mt-1">
+          <p className="text-xs text-muted mt-1 nums-tabular">
             Efectivo ${product.priceCash.toLocaleString('es-AR')} · {product.installments.count}× ${product.installments.amount.toLocaleString('es-AR')}
           </p>
         </div>

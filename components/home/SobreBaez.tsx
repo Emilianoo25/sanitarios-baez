@@ -66,7 +66,7 @@ export function SobreBaez() {
                 key={stat.label}
                 className="bg-primary/40 p-7 backdrop-blur-sm transition-colors hover:bg-primary/20"
               >
-                <p className="font-display text-5xl font-bold tracking-tight text-white">
+                <p className="font-display text-5xl font-bold tracking-tight text-white nums-tabular">
                   {stat.value}
                 </p>
                 <p className="mt-2 text-sm text-white/60">{stat.label}</p>
