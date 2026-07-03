@@ -93,7 +93,7 @@ export function ProductActions({ product, onOpenAI, variant = 'page' }: ProductA
         className="flex w-full items-center justify-center gap-2 rounded-md bg-[#25D366] px-4 py-3 text-sm font-medium text-white hover:bg-[#1fba58] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#25D366]"
       >
         <MessageCircle size={16} />
-        Consultar por WhatsApp con Báez
+        Consultar por WhatsApp
       </a>
 
       {/* AI */}

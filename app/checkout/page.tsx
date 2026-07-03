@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { ChevronRight, CreditCard, Building2, Banknote, Check } from 'lucide-react'
 import { useCart } from '@/context/CartContext'
@@ -26,6 +26,20 @@ export default function CheckoutPage() {
     dni: '', direccion: '', ciudad: '', provincia: 'Ciudad Autónoma de Buenos Aires',
     cp: '', telefono: '', notasPedido: '', enviarOtra: false, factura: false,
   })
+  const [mounted, setMounted] = useState(false)
+
+  // Persistir los datos de facturación para que no se pierdan al recargar o navegar.
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('baez-checkout-form')
+      if (saved) setForm(f => ({ ...f, ...JSON.parse(saved) }))
+    } catch {}
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (mounted) localStorage.setItem('baez-checkout-form', JSON.stringify(form))
+  }, [form, mounted])
 
   function set(k: keyof typeof form, v: string | boolean) {
     setForm(f => ({ ...f, [k]: v }))
