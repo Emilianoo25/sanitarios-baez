@@ -11,14 +11,19 @@ export interface FilterState {
   sortBy: 'featured' | 'price-asc' | 'price-desc'
 }
 
-export function useProductFilters(allProducts: Product[]) {
+const VALID_CATEGORIES = ['griferias', 'sanitarios', 'bachas', 'duchas', 'accesorios']
+
+export function useProductFilters(allProducts: Product[], initialCategory?: string | null) {
   const globalMax = useMemo(
     () => (allProducts.length ? Math.max(...allProducts.map(p => p.price)) : 0),
     [allProducts]
   )
 
   const [filters, setFilters] = useState<FilterState>({
-    categories: [],
+    categories:
+      initialCategory && VALID_CATEGORIES.includes(initialCategory)
+        ? [initialCategory as ProductCategory]
+        : [],
     brands: [],
     priceMax: 0,
     inStockOnly: false,

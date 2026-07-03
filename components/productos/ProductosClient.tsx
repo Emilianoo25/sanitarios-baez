@@ -28,6 +28,7 @@ export function ProductosClient({ products }: { products: Product[] }) {
 function ProductosContent({ products }: { products: Product[] }) {
   const searchParams = useSearchParams()
   const promoOnly = searchParams.get('promo') === 'true'
+  const initialCategory = searchParams.get('categoria')
   const [aiOpen, setAiOpen] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
   const {
@@ -40,7 +41,7 @@ function ProductosContent({ products }: { products: Product[] }) {
     activeCount,
     globalMax,
     setFilters,
-  } = useProductFilters(products)
+  } = useProductFilters(products, initialCategory)
 
   return (
     <div className="min-h-screen bg-white">

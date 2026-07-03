@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
 import { Container } from '@/components/common/Container'
 import { Section } from '@/components/common/Section'
 import type { Product } from '@/types'
@@ -75,17 +74,17 @@ export function Categories({ products }: { products: Product[] }) {
                     sizes="(max-width: 1024px) 50vw, 25vw"
                     quality={85}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10 transition-colors group-hover:from-primary/90" />
-
-                  <div className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center bg-white/15 text-white backdrop-blur-sm transition-colors group-hover:bg-accent">
-                    <ArrowUpRight size={16} />
-                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5 transition-all duration-500 group-hover:from-black/95" />
 
                   <div className="absolute inset-x-0 bottom-0 p-4">
-                    <p className="font-display text-lg font-semibold leading-tight text-white sm:text-xl">
+                    <p className="font-display text-lg font-semibold leading-tight text-white transition-transform duration-500 ease-premium group-hover:-translate-y-1 sm:text-xl">
                       {cat.label}
                     </p>
-                    <p className="mt-0.5 text-[11px] text-white/70">
+                    <span
+                      aria-hidden
+                      className="mt-2 block h-[2px] w-9 origin-left scale-x-0 bg-accent transition-transform duration-500 ease-premium group-hover:scale-x-100"
+                    />
+                    <p className="mt-2 text-[11px] uppercase tracking-[1.5px] text-white/70 nums-tabular">
                       {count} {count === 1 ? 'producto' : 'productos'}
                     </p>
                   </div>
