@@ -12,10 +12,10 @@ interface NavLink {
 interface MobileMenuProps {
   open: boolean
   onClose: () => void
-  links: NavLink[]
+  categories: NavLink[]
 }
 
-export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
+export function MobileMenu({ open, onClose, categories }: MobileMenuProps) {
   return (
     <Sheet open={open} onOpenChange={(isOpen) => { if (!isOpen) onClose() }}>
       <SheetContent side="left" className="w-72 p-0" showCloseButton={false}>
@@ -24,7 +24,10 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
         </div>
         <nav aria-label="Menú móvil">
           <ul className="px-4 py-6 space-y-1" role="list">
-            {links.map(link => (
+            <li className="px-3 pb-1 pt-2 text-[11px] font-semibold uppercase tracking-[2px] text-muted">
+              Categorías
+            </li>
+            {categories.map(link => (
               <li key={link.href}>
                 <Link
                   href={link.href}
@@ -35,6 +38,15 @@ export function MobileMenu({ open, onClose, links }: MobileMenuProps) {
                 </Link>
               </li>
             ))}
+            <li className="mt-2 border-t border-border pt-2">
+              <Link
+                href="/contacto"
+                onClick={onClose}
+                className="flex items-center px-3 py-3 text-base font-medium text-ink hover:text-primary hover:bg-bone rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              >
+                Contacto
+              </Link>
+            </li>
           </ul>
         </nav>
         <div className="px-6 py-4 border-t border-border">

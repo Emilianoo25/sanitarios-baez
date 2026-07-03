@@ -20,7 +20,7 @@ export function useProductFilters(allProducts: Product[]) {
   const [filters, setFilters] = useState<FilterState>({
     categories: [],
     brands: [],
-    priceMax: globalMax,
+    priceMax: 0,
     inStockOnly: false,
     sortBy: 'featured',
   })
@@ -34,7 +34,10 @@ export function useProductFilters(allProducts: Product[]) {
     if (filters.brands.length > 0) {
       result = result.filter(p => filters.brands.includes(p.brand))
     }
-    result = result.filter(p => p.price <= filters.priceMax)
+    // priceMax = 0 significa "sin límite": muestra todos hasta que muevan la barra.
+    if (filters.priceMax > 0) {
+      result = result.filter(p => p.price <= filters.priceMax)
+    }
     if (filters.inStockOnly) {
       result = result.filter(p => p.inStock)
     }
@@ -74,7 +77,7 @@ export function useProductFilters(allProducts: Product[]) {
     setFilters({
       categories: [],
       brands: [],
-      priceMax: globalMax,
+      priceMax: 0,
       inStockOnly: false,
       sortBy: 'featured',
     })
@@ -84,7 +87,7 @@ export function useProductFilters(allProducts: Product[]) {
     filters.categories.length +
     filters.brands.length +
     (filters.inStockOnly ? 1 : 0) +
-    (filters.priceMax < globalMax ? 1 : 0)
+    (filters.priceMax > 0 ? 1 : 0)
 
   return {
     filters,

@@ -59,6 +59,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
             transformOrigin: `${origin.x}% ${origin.y}%`,
           }}
           sizes="(max-width: 768px) 100vw, 60vw"
+          quality={90}
           priority
         />
       </div>

@@ -9,7 +9,6 @@ const FOOTER_LINKS = {
     { label: 'Duchas', href: '/productos?categoria=duchas' },
   ],
   empresa: [
-    { label: 'Obras realizadas', href: '/obras' },
     { label: 'Contacto', href: '/contacto' },
   ],
   legales: [

@@ -1,19 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-import { ShoppingCart, Search, Menu } from 'lucide-react'
+import { ShoppingCart, Search, Menu, ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 import { BrandLogo } from '@/components/common/BrandLogo'
 import { MobileMenu } from './MobileMenu'
 import { useCart } from '@/context/CartContext'
 
-const NAV_LINKS = [
+const CATEGORY_LINKS = [
   { label: 'Griferías', href: '/productos?categoria=griferias' },
-  { label: 'Accesorios', href: '/productos?categoria=accesorios' },
   { label: 'Bachas', href: '/productos?categoria=bachas' },
   { label: 'Duchas', href: '/productos?categoria=duchas' },
-  { label: 'Obras', href: '/obras' },
-  { label: 'Contacto', href: '/contacto' },
+  { label: 'Accesorios', href: '/productos?categoria=accesorios' },
 ]
 
 export function Navbar() {
@@ -30,16 +28,33 @@ export function Navbar() {
           <BrandLogo />
 
           <ul className="hidden lg:flex items-center gap-6" role="list">
-            {NAV_LINKS.map(link => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-sm font-medium text-ink hover:text-primary transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            <li className="relative group">
+              <button className="flex items-center gap-1 text-sm font-medium text-ink hover:text-primary transition-colors">
+                Categorías
+                <ChevronDown size={14} className="transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="absolute left-1/2 top-full -translate-x-1/2 pt-3 opacity-0 invisible translate-y-1 transition-all duration-150 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+                <div className="min-w-[180px] border border-border bg-white py-2 shadow-[0_12px_40px_-12px_rgba(10,77,140,0.25)]">
+                  {CATEGORY_LINKS.map(link => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block px-4 py-2 text-sm text-ink hover:bg-bone hover:text-primary transition-colors"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </li>
+            <li>
+              <Link
+                href="/contacto"
+                className="text-sm font-medium text-ink hover:text-primary transition-colors"
+              >
+                Contacto
+              </Link>
+            </li>
           </ul>
 
           <div className="flex items-center gap-3">
@@ -81,7 +96,7 @@ export function Navbar() {
       <MobileMenu
         open={mobileOpen}
         onClose={() => setMobileOpen(false)}
-        links={NAV_LINKS}
+        categories={CATEGORY_LINKS}
       />
     </>
   )

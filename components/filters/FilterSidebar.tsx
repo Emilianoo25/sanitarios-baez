@@ -76,7 +76,8 @@ export function FilterSidebar({
 
       <div>
         <h3 className="text-sm font-medium text-ink mb-3">
-          Precio máximo: ${filters.priceMax.toLocaleString('es-AR')}
+          Precio máximo:{' '}
+          {filters.priceMax > 0 ? `$${filters.priceMax.toLocaleString('es-AR')}` : 'Sin límite'}
         </h3>
         <Slider
           min={0}
