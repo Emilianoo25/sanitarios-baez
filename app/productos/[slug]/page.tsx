@@ -98,7 +98,7 @@ export default async function ProductoPage({ params }: Props) {
               )}
             </div>
 
-            <p className="text-sm text-muted leading-relaxed">{product.description}</p>
+            <p className="whitespace-pre-line text-sm text-muted leading-relaxed">{product.description}</p>
 
             <ProductActionsWrapper product={product} />
 

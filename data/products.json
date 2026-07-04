@@ -9,20 +9,44 @@
     "subcategory": "lavatorio",
     "price": 101454,
     "priceCash": 91309,
-    "installments": { "count": 3, "amount": 33818 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_913005-MLA97350948197_112025-O.webp"],
-    "description": "Grifería monocomando de caño alto para lavatorio, línea Río de Peirano. Cartucho cerámico y acabado de alta resistencia.",
+    "installments": {
+      "count": 3,
+      "amount": 33818
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_913005-MLA97350948197_112025-O.webp"
+    ],
+    "description": "La grifería baño lavatorio monocomando alto Black Rio Peirano es la opción ideal para quienes buscan un diseño moderno y funcional en su baño. Con su elegante acabado en color negro, se convierte en un elemento decorativo que complementa cualquier estilo de interior. Este modelo de grifería monocomando, diseñado específicamente para ser montado en mesa, asegura una experiencia de uso cómoda y sencilla con su mecanismo de control de una sola palanca. Hecha de durable latón, esta grifería no solo garantiza resistencia, sino también un buen funcionamiento a largo plazo. Además, cuenta con un aireador que optimiza el flujo de agua, mientras que su altura adecuada la hace perfecta para cualquier bacha. Aportando estilo y practicidad, el modelo Lavatorio Alto de Peirano no sólo es funcional, sino que también realza la estética de tu baño. Ideal para quienes buscan calidad sin sacrificar el diseño.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Tipo", "value": "Monocomando" },
-      { "key": "Colores", "value": "Cromo, Negro" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Tipo",
+        "value": "Monocomando"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo, Negro"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": true,
     "onPromo": false,
-    "tags": ["cromo", "negro", "griferias"]
+    "tags": [
+      "cromo",
+      "negro",
+      "griferias"
+    ]
   },
   {
     "id": "2",
@@ -34,20 +58,45 @@
     "subcategory": "combo",
     "price": 293659,
     "priceCash": 264293,
-    "installments": { "count": 3, "amount": 97886 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_680543-MLA95958873445_102025-O.webp"],
-    "description": "Combo completo de baño línea Río: grifería de ducha, lavatorio y bidet a juego. Ideal para reformas integrales.",
+    "installments": {
+      "count": 3,
+      "amount": 97886
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_680543-MLA95958873445_102025-O.webp"
+    ],
+    "description": "Griferia Baño Monocomando Combo Completo Rio Cromo.\nIncluye ducha con transferencia de embutir, lavatorio bajo y bidet con transferencia.\n\nLínea Río – Ducha de embutir Monocomando\n80 - 176\nCARACTERÍSTICAS\nCierre cerámico.\nTerminación resistente a 200 horas de niebla salina\nDucha anticalcárea 10 cm\nGarantía 5 años\n\nLínea Río – Lavatorio bajo Monocomando\n60-176\nCARACTERÍSTICAS\nCierre cerámico\nCartucho de 35 mm\nTerminación resistente a 200 horas de niebla salina\nCuerpo metálico\nGarantía 5 años\n\nLínea Río – Bidé Monocomando\n70 - 176\nCARACTERÍSTICAS\nCierre cerámico.\nCuerpo totalmente metálico.\nTerminación resistente a 200 horas de niebla salina\nGarantía 5 años\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Ducha + Lavatorio + Bidet" },
-      { "key": "Colores", "value": "Cromo, Negro" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Ducha + Lavatorio + Bidet"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo, Negro"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": true,
     "onPromo": false,
-    "tags": ["cromo", "negro", "combo", "duchas"]
+    "tags": [
+      "cromo",
+      "negro",
+      "combo",
+      "duchas"
+    ]
   },
   {
     "id": "3",
@@ -59,20 +108,44 @@
     "subcategory": "cocina",
     "price": 95484,
     "priceCash": 85936,
-    "installments": { "count": 3, "amount": 31828 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_975890-MLA98268060774_112025-O.webp"],
-    "description": "Grifería monocomando de cocina para instalación en pared, línea Adra de Peirano. Diseño limpio y caño giratorio.",
+    "installments": {
+      "count": 3,
+      "amount": 31828
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_975890-MLA98268060774_112025-O.webp"
+    ],
+    "description": "La Grifería Moncomando de Cocina Pared Peirano Adra 54-203 en color cromo es la elección perfecta para quienes buscan funcionalidad y estilo en su cocina. Su acabado cromado no solo aporta un toque moderno, sino que también garantiza durabilidad y resistencia a la corrosión, manteniendo su brillo a lo largo del tiempo.\n\nEste modelo cuenta con un control monocomando que permite un manejo sencillo y preciso de la temperatura y el caudal del agua. Su diseño de instalación en pared es ideal para optimizar el espacio en la cocina, mientras que su sistema de cierre cerámico asegura un funcionamiento suave y sin goteos.\n\nLa grifería incluye un aireador, lo que contribuye a un uso eficiente del agua, ideal para quienes buscan cuidar el medio ambiente sin sacrificar el rendimiento. Además, es compatible con calentadores de agua, lo que la convierte en una opción versátil para diferentes necesidades en la cocina.\n\nCon un diseño que combina estética y funcionalidad, la Grifería Peirano Adra 54-203 es una inversión que transformará tu espacio culinario, brindando comodidad y elegancia en cada uso. Su palanca ergonómica facilita el manejo, haciendo de cada tarea en la cocina una experiencia más placentera.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Adra" },
-      { "key": "Instalación", "value": "De pared" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Adra"
+      },
+      {
+        "key": "Instalación",
+        "value": "De pared"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "cocina", "griferias"]
+    "tags": [
+      "cromo",
+      "cocina",
+      "griferias"
+    ]
   },
   {
     "id": "4",
@@ -84,20 +157,45 @@
     "subcategory": "combo",
     "price": 322469,
     "priceCash": 290222,
-    "installments": { "count": 3, "amount": 107490 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_632771-MLA96268937130_102025-O.webp"],
-    "description": "Combo de baño línea Río con grifería de ducha, lavatorio de caño alto y bidet. Estética unificada para toda la reforma.",
+    "installments": {
+      "count": 3,
+      "amount": 107490
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_632771-MLA96268937130_102025-O.webp"
+    ],
+    "description": "Griferia Baño Monocomando Combo Completo Rio Cromo.\nIncluye ducha con transferencia de embutir, lavatorio alto y bidet con transferencia.\n\nLínea Río – Ducha de embutir Monocomando\n80 - 176\nCARACTERÍSTICAS\nCierre cerámico.\nTerminación resistente a 200 horas de niebla salina\nDucha anticalcárea 10 cm\nGarantía 5 años\n\nLínea Río – Lavatorio alto Monocomando\n61-176\nCARACTERÍSTICAS\nCierre cerámico\nCartucho de 35 mm\nTerminación resistente a 200 horas de niebla salina\nCuerpo metálico\nGarantía 5 años\n\nLínea Río – Bidé Monocomando\n70 - 176\nCARACTERÍSTICAS\nCierre cerámico.\nCuerpo totalmente metálico.\nTerminación resistente a 200 horas de niebla salina\nGarantía 5 años\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n- HACEMOS ENVIOS, CONSULTAR COSTOS!!!\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Ducha + Lavatorio alto + Bidet" },
-      { "key": "Colores", "value": "Cromo, Negro" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Ducha + Lavatorio alto + Bidet"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo, Negro"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "negro", "combo", "duchas"]
+    "tags": [
+      "cromo",
+      "negro",
+      "combo",
+      "duchas"
+    ]
   },
   {
     "id": "5",
@@ -109,20 +207,43 @@
     "subcategory": "lavatorio",
     "price": 101454,
     "priceCash": 91309,
-    "installments": { "count": 3, "amount": 33818 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_618132-MLA95231165933_102025-O.webp"],
-    "description": "Grifería monocomando de caño alto para lavatorio, línea Río. Apertura suave y gran caudal.",
+    "installments": {
+      "count": 3,
+      "amount": 33818
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_618132-MLA95231165933_102025-O.webp"
+    ],
+    "description": "La grifería monocomando de lavatorio Rio de Peirano es la elección ideal para quienes buscan un estilo moderno y sofisticado en su baño. Con un acabado cromado, este modelo 61-176 se adapta perfectamente a diversas decoraciones, aportando un toque de distinción y elegancia a espacios contemporáneos.\n\nDiseñada para ser montada en mesa, cuenta con un único orificio, facilitando su instalación en bachas y vanitories de diferentes estilos. Su mecanismo de cierre cerámico garantiza un funcionamiento suave y duradero, ofreciendo una experiencia de uso cómoda y eficiente. Además, la palanca de control monocomando permite regular fácilmente tanto el flujo como la temperatura del agua.\n\nCon un diseño pensado en la funcionalidad, la mezcladora también incluye un aireador, optimizando el consumo de agua sin comprometer la presión. Esta grifería no solo aporta estética, sino que también se alinea con el deseo de los consumidores conscientes sobre el uso responsable de los recursos.\n\nLa grifería Rio no es solo un accesorio, es un elemento que eleva la calidad de tu baño y transforma tu rutina diaria en un ritual de bienestar y elegancia. Descubre cómo este producto puede ser el complemento perfecto para tu hogar, creando un ambiente armonioso y moderno.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Tipo", "value": "Monocomando alto" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Tipo",
+        "value": "Monocomando alto"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "griferias"]
+    "tags": [
+      "cromo",
+      "griferias"
+    ]
   },
   {
     "id": "6",
@@ -134,20 +255,44 @@
     "subcategory": "ducha",
     "price": 21097,
     "priceCash": 18987,
-    "installments": { "count": 3, "amount": 7032 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_956032-MLA101806850720_122025-O.webp"],
-    "description": "Flor de ducha Peirano con caño curvo y brazo ABS. Rociador cuadrado con efecto lluvia.",
+    "installments": {
+      "count": 3,
+      "amount": 7032
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_956032-MLA101806850720_122025-O.webp"
+    ],
+    "description": "Transforma tu experiencia de baño con la Flor de Ducha de 4\" Peirano A1448C. Este accesorio de baño no solo añade un toque de elegancia con su acabado cromado, sino que también garantiza una ducha placentera gracias a su diseño redondo y eficiente. Fabricada en ABS, su material de alta calidad asegura durabilidad y resistencia en el uso diario.\n\nLa Flor de Ducha está diseñada para instalación de pared, lo que la convierte en una opción funcional que se adapta a cualquier espacio. Su diámetro de 4\" proporciona una excelente cobertura de agua, permitiendo un baño relajante. La inclusión de soporte facilita su colocación adecuada, ofreciendo un uso práctico y sencillo.\n\nPeirano se destaca por su compromiso con la calidad y la innovación en accesorios de baño, brindando productos que combinan estilo y funcionalidad. Al elegir la Flor de Ducha A1448C, no solo estás adquiriendo un aparato, sino una experiencia de bienestar en cada ducha. Ideal para quienes buscan optimizar su espacio y disfrutar de momentos especiales de relajación diaria.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Modelo", "value": "A1448C" },
-      { "key": "Brazo", "value": "Curvo ABS" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Modelo",
+        "value": "A1448C"
+      },
+      {
+        "key": "Brazo",
+        "value": "Curvo ABS"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": true,
     "onPromo": false,
-    "tags": ["cromo", "ducha", "duchas"]
+    "tags": [
+      "cromo",
+      "ducha",
+      "duchas"
+    ]
   },
   {
     "id": "7",
@@ -159,20 +304,44 @@
     "subcategory": "combo",
     "price": 166689,
     "priceCash": 150020,
-    "installments": { "count": 3, "amount": 55563 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_730229-MLA95620574068_102025-O.webp"],
-    "description": "Combo de grifería monocomando línea Río para lavatorio y bidet. Terminación cromada a juego.",
+    "installments": {
+      "count": 3,
+      "amount": 55563
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_730229-MLA95620574068_102025-O.webp"
+    ],
+    "description": "Combo griferia baño monocomando Peirano Rio cromo.\nIncluye lavatorio bajo y bidet con transferencia.\n\nLínea Río – Lavatorio bajo Monocomando\n60-176\nCARACTERÍSTICAS\nCierre cerámico\nCartucho de 35 mm\nTerminación resistente a 200 horas de niebla salina\nCuerpo metálico\nGarantía 5 años\n\nLínea Río – Bidé Monocomando\n70 - 176\nCARACTERÍSTICAS\nCierre cerámico.\nCuerpo totalmente metálico.\nTerminación resistente a 200 horas de niebla salina\nGarantía 5 años\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Lavatorio + Bidet" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Lavatorio + Bidet"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "combo", "griferias"]
+    "tags": [
+      "cromo",
+      "combo",
+      "griferias"
+    ]
   },
   {
     "id": "8",
@@ -184,20 +353,44 @@
     "subcategory": "combo",
     "price": 212785,
     "priceCash": 191507,
-    "installments": { "count": 3, "amount": 70928 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_844384-MLA97193935910_112025-O.webp"],
-    "description": "Combo línea Río en negro: grifería de lavatorio alto y bidet con transferencia. Diseño moderno y sobrio.",
+    "installments": {
+      "count": 3,
+      "amount": 70928
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_844384-MLA97193935910_112025-O.webp"
+    ],
+    "description": "Combo griferia monocomando para baño Peirano Rio Black.\nIncluye lavatorio alto y bidet con transferencia.\n\nLínea Río Black – Lavatorio alto Monocomando\n61-176N\nCARACTERÍSTICAS\nTerminación Negro Mate\nCierre cerámico\nCartucho de 35 mm\nTerminación resistente a 200 horas de niebla salina\nCuerpo metálico\nGarantía 5 años\n\nLínea Río Black – Bidé Monocomando\n70 - 176N\nCARACTERÍSTICAS\nTerminación Negro Mate\nCierre cerámico.\nCuerpo totalmente metálico.\nTerminación resistente a 200 horas de niebla salina\nGarantía 5 años\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Lavatorio alto + Bidet c/transferencia" },
-      { "key": "Colores", "value": "Negro" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Lavatorio alto + Bidet c/transferencia"
+      },
+      {
+        "key": "Colores",
+        "value": "Negro"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["negro", "combo", "griferias"]
+    "tags": [
+      "negro",
+      "combo",
+      "griferias"
+    ]
   },
   {
     "id": "9",
@@ -209,20 +402,44 @@
     "subcategory": "combo",
     "price": 171952,
     "priceCash": 154757,
-    "installments": { "count": 3, "amount": 57317 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_875850-MLA94799930586_102025-O.webp"],
-    "description": "Combo de grifería de lavatorio alto línea Río más bacha de apoyar BCH01 de 320×145 mm.",
+    "installments": {
+      "count": 3,
+      "amount": 57317
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_875850-MLA94799930586_102025-O.webp"
+    ],
+    "description": "Combo Peirano Lavatorio Alto Rio cromo y Bacha de apoyar circular\n\nGriferia Peirano Línea Río – Lavatorio alto Monocomando\nCodigo: 61-176\n\nCARACTERÍSTICAS\nCierre cerámico\nCartucho de 35 mm\nTerminación resistente a 200 horas de niebla salina\nCuerpo metálico\nGarantía 5 años\n\nBCH02 – Bacha de apoyar circular\n\nCARACTERÍSTICAS\nCerámica.\nCodigo: BCH - 01\nMedidas: 320×145\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Grifería alta + Bacha BCH01 320×145" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Grifería alta + Bacha BCH01 320×145"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "combo", "bachas"]
+    "tags": [
+      "cromo",
+      "combo",
+      "bachas"
+    ]
   },
   {
     "id": "10",
@@ -234,20 +451,44 @@
     "subcategory": "combo",
     "price": 195499,
     "priceCash": 175949,
-    "installments": { "count": 3, "amount": 65166 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_974316-MLA96748993407_102025-O.webp"],
-    "description": "Combo de baño línea Río en cromo: grifería de lavatorio alto y bidet con transferencia.",
+    "installments": {
+      "count": 3,
+      "amount": 65166
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_974316-MLA96748993407_102025-O.webp"
+    ],
+    "description": "Combo griferia monocomando para baño Peirano Rio.\nIncluye lavatorio alto y bidet con transferencia.\n\nLínea Río – Lavatorio alto Monocomando\n61-176\nCARACTERÍSTICAS\nCierre cerámico\nCartucho de 35 mm\nTerminación resistente a 200 horas de niebla salina\nCuerpo metálico\nGarantía 5 años\n\nLínea Río – Bidé Monocomando\n70 - 176\nCARACTERÍSTICAS\nCierre cerámico.\nCuerpo totalmente metálico.\nTerminación resistente a 200 horas de niebla salina\nGarantía 5 años\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n- HACEMOS ENVIOS, CONSULTAR COSTOS!!!\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Lavatorio alto + Bidet c/transferencia" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Lavatorio alto + Bidet c/transferencia"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "combo", "griferias"]
+    "tags": [
+      "cromo",
+      "combo",
+      "griferias"
+    ]
   },
   {
     "id": "11",
@@ -259,20 +500,44 @@
     "subcategory": "ducha",
     "price": 297616,
     "priceCash": 267854,
-    "installments": { "count": 3, "amount": 99205 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_659311-MLA103986610057_012026-O.webp"],
-    "description": "Grifería de ducha monocomando línea Wave en negro, con ducha incluida. Diseño premium y minimalista.",
+    "installments": {
+      "count": 3,
+      "amount": 99205
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_659311-MLA103986610057_012026-O.webp"
+    ],
+    "description": "Transforma tu baño en un espacio de sofisticación y elegancia con la Grifería Baño Ducha Peirano Wave 85-168N. Este modelo destaca por su acabado mate negro, que aporta un toque contemporáneo y minimalista a cualquier ambiente. Su diseño cuadrado no solo es estéticamente agradable, sino que también facilita la limpieza, manteniendo el baño siempre impecable.\n\nFabricada en metal de alta calidad, esta grifería está diseñada para resistir el uso intenso sin comprometer su apariencia. El duchador de mano permite una experiencia de ducha personalizada, ajustándose a tus preferencias y necesidades. Con una longitud de manguera de 1,5 m, te brinda la libertad de movimiento para disfrutar de un baño completo y placentero.\n\nLa instalación de este modelo es de pared, lo que optimiza el espacio en tu baño y proporciona un aspecto más ordenado. Su versatilidad se complementa con un soporte incluido, asegurando que el duchador de mano siempre esté al alcance y en su lugar. La Grifería Baño Ducha Peirano Wave 85-168N es la combinación perfecta de funcionalidad y diseño, haciendo de tu rutina diaria un momento de refinamiento.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Wave 85-168N" },
-      { "key": "Tipo", "value": "Monocomando con ducha" },
-      { "key": "Colores", "value": "Negro" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Wave 85-168N"
+      },
+      {
+        "key": "Tipo",
+        "value": "Monocomando con ducha"
+      },
+      {
+        "key": "Colores",
+        "value": "Negro"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": true,
     "onPromo": false,
-    "tags": ["negro", "ducha", "duchas"]
+    "tags": [
+      "negro",
+      "ducha",
+      "duchas"
+    ]
   },
   {
     "id": "12",
@@ -284,20 +549,43 @@
     "subcategory": "lavatorio",
     "price": 72644,
     "priceCash": 65380,
-    "installments": { "count": 3, "amount": 24215 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_919156-MLA96392388476_102025-O.webp"],
-    "description": "Grifería monocomando de lavatorio línea Río, modelo 60-176. Excelente relación precio-calidad.",
+    "installments": {
+      "count": 3,
+      "amount": 24215
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_919156-MLA96392388476_102025-O.webp"
+    ],
+    "description": "La Grifería baño lavatorio monocomando bajo cromo Rio Peirano es la elección perfecta para quienes buscan un toque de modernidad y funcionalidad en su baño. Con un diseño contemporáneo y elegante, su acabado en cromo brillante no solo aporta un estilo sofisticado, sino que también es fácil de limpiar y mantener. Este modelo de grifería monocomando permite un control intuitivo de la temperatura y el caudal del agua, brindando comodidad en cada uso. Ideal para baños contemporáneos, su construcción con materiales de alta calidad asegura una durabilidad excepcional, resistiendo el paso del tiempo y el uso diario. Además, cuenta con un impuesto interno del 0% y un IVA del 21%, lo que la convierte en una opción accesible y atractiva para cualquier hogar. Con la marca Peirano, puedes confiar en la excelencia y el diseño de este producto.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río 60-176" },
-      { "key": "Tipo", "value": "Monocomando" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río 60-176"
+      },
+      {
+        "key": "Tipo",
+        "value": "Monocomando"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "griferias"]
+    "tags": [
+      "cromo",
+      "griferias"
+    ]
   },
   {
     "id": "13",
@@ -309,20 +597,44 @@
     "subcategory": "combo",
     "price": 221016,
     "priceCash": 198914,
-    "installments": { "count": 3, "amount": 73672 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_885954-MLA97644160891_112025-O.webp"],
-    "description": "Combo de baño línea Río en negro: grifería de ducha y lavatorio monocomando a juego.",
+    "installments": {
+      "count": 3,
+      "amount": 73672
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_885954-MLA97644160891_112025-O.webp"
+    ],
+    "description": "Griferia combo monocomando para baño Peirano Rio Black.\nIncluye ducha de embutir con transferencia y lavatorio bajo.\n\nLínea Río Black – Ducha de embutir Monocomando\n80 - 176N\nCARACTERÍSTICAS\nTerminacíón Negro Mate\nCierre cerámico.\nTerminación resistente a 200 horas de niebla salina\nDucha anticalcárea 10 cm\nGarantía 5 años\n\nLínea Río Black – Lavatorio bajo Monocomando\n60-176N\nCARACTERÍSTICAS\nTerminación Negro Mate\nCierre cerámico\nCartucho de 35 mm\nTerminación resistente a 200 horas de niebla salina\nCuerpo metálico\nGarantía 5 años\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n- HACEMOS ENVIOS, CONSULTAR COSTOS!!!\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Ducha + Lavatorio" },
-      { "key": "Colores", "value": "Negro" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Ducha + Lavatorio"
+      },
+      {
+        "key": "Colores",
+        "value": "Negro"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["negro", "combo", "duchas"]
+    "tags": [
+      "negro",
+      "combo",
+      "duchas"
+    ]
   },
   {
     "id": "14",
@@ -334,20 +646,44 @@
     "subcategory": "combo",
     "price": 150335,
     "priceCash": 135302,
-    "installments": { "count": 3, "amount": 50112 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_882362-MLA94793986888_102025-O.webp"],
-    "description": "Combo de grifería de lavatorio bajo línea Río más bacha de apoyar BCH02 de 415×145 mm.",
+    "installments": {
+      "count": 3,
+      "amount": 50112
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_882362-MLA94793986888_102025-O.webp"
+    ],
+    "description": "Combo Peirano Lavatorio Bajo Rio cromo y Bacha de apoyar circular\n\nGriferia Peirano Línea Río – Lavatorio bajo Monocomando\nCodigo: 60-176\n\nCARACTERÍSTICAS\nCierre cerámico\nCartucho de 35 mm\nTerminación resistente a 200 horas de niebla salina\nCuerpo metálico\nGarantía 5 años\n\nBCH02 – Bacha de apoyar circular\n\nCARACTERÍSTICAS\nCerámica.\nCodigo: BCH - 02\nMedidas: 415×145\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Grifería baja + Bacha BCH02 415×145" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Grifería baja + Bacha BCH02 415×145"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "combo", "bachas"]
+    "tags": [
+      "cromo",
+      "combo",
+      "bachas"
+    ]
   },
   {
     "id": "15",
@@ -359,20 +695,44 @@
     "subcategory": "ducha",
     "price": 126970,
     "priceCash": 114273,
-    "installments": { "count": 3, "amount": 42323 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_709596-MLA111278787607_052026-O.webp"],
-    "description": "Grifería de ducha de embutir monocomando línea Río 80-176. Instalación empotrada de línea limpia.",
+    "installments": {
+      "count": 3,
+      "amount": 42323
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_709596-MLA111278787607_052026-O.webp"
+    ],
+    "description": "Ducha de embutir monocomando con transferencia Peirano Rio Cromo.\n\nLínea Río – Ducha de embutir Monocomando\n80 - 176\n\nCARACTERÍSTICAS\nCierre cerámico.\nTerminación resistente a 200 horas de niebla salina\nDucha anticalcárea 10 cm\nGarantía 5 años\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río 80-176" },
-      { "key": "Tipo", "value": "Embutir monocomando" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río 80-176"
+      },
+      {
+        "key": "Tipo",
+        "value": "Embutir monocomando"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "ducha", "duchas"]
+    "tags": [
+      "cromo",
+      "ducha",
+      "duchas"
+    ]
   },
   {
     "id": "16",
@@ -384,20 +744,43 @@
     "subcategory": "percha",
     "price": 16706,
     "priceCash": 15035,
-    "installments": { "count": 3, "amount": 5569 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_834921-MLA94684229052_102025-O.webp"],
-    "description": "Percha de baño Peirano línea 3000 en cromo. Accesorio resistente para toallas y prendas.",
+    "installments": {
+      "count": 3,
+      "amount": 5569
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_834921-MLA94684229052_102025-O.webp"
+    ],
+    "description": "La Percha Doble Perchero Gancho Baño Peirano Línea 3000 es la solución perfecta para mantener tus toallas organizadas y al alcance de la mano. Con un elegante acabado cromado en color plateado, este perchero no solo es funcional, sino que también añade un toque moderno a cualquier baño. Fabricado en metal de alta calidad, garantiza durabilidad y resistencia. Su diseño de doble gancho permite colgar múltiples toallas, optimizando el espacio disponible. Además, su sistema de fijación mediante tornillos asegura una instalación segura y estable. Con dimensiones de 30 cm de altura, 20 cm de ancho y 7 cm de largo, es ideal para cualquier ambiente. Su peso ligero de 140 g facilita su manejo y colocación. Este modelo 3030 es una opción versátil y práctica para quienes buscan un accesorio que combine estilo y funcionalidad en su hogar.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "3000" },
-      { "key": "Tipo", "value": "Percha" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "3000"
+      },
+      {
+        "key": "Tipo",
+        "value": "Percha"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "accesorios"]
+    "tags": [
+      "cromo",
+      "accesorios"
+    ]
   },
   {
     "id": "17",
@@ -409,20 +792,44 @@
     "subcategory": "cocina",
     "price": 142210,
     "priceCash": 127989,
-    "installments": { "count": 3, "amount": 47403 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_918994-MLA96390658242_102025-O.webp"],
-    "description": "Grifería de cocina monocomando línea Valencia 20-122 con caño extensible. Máxima practicidad en la bacha.",
+    "installments": {
+      "count": 3,
+      "amount": 47403
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_918994-MLA96390658242_102025-O.webp"
+    ],
+    "description": "GRIFERIA PARA MESADA COCINA MONOCOMANDO PEIRANO VALENCIA 20-122\n\n- Cierre cerámico\n\n- Pico con duchador extensible y flexible\n\n-Cuerpo metálico\n\n- Pesa bajo mesada: Se recomienda dar ajuste de 15 a 20 cm del extremo\n\n- Terminación en Cromo (opción Negro Mate)\n\n- Cartucho de 35 mm (gran caudal)\n\n- Base del monocomando: Ø 40 mm\n\n- 2 bar de presión como mínimo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Valencia 20-122" },
-      { "key": "Caño", "value": "Extensible" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Valencia 20-122"
+      },
+      {
+        "key": "Caño",
+        "value": "Extensible"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": true,
     "onPromo": false,
-    "tags": ["cromo", "cocina", "griferias"]
+    "tags": [
+      "cromo",
+      "cocina",
+      "griferias"
+    ]
   },
   {
     "id": "18",
@@ -434,20 +841,44 @@
     "subcategory": "cocina",
     "price": 86530,
     "priceCash": 77877,
-    "installments": { "count": 3, "amount": 28843 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_928057-MLA98373008493_112025-O.webp"],
-    "description": "Grifería de cocina monocomando línea Steel 20-205 en acero pulido. Terminación durable y moderna.",
+    "installments": {
+      "count": 3,
+      "amount": 28843
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_928057-MLA98373008493_112025-O.webp"
+    ],
+    "description": "Griferia de cocina monocomando Peirano Steel.\n\nLínea Steel – Monocomando de cocina\n20 - 205\n\nCARACTERÍSTICAS\nCierre cerámico\nCuerpo metálico\nTerminación en acero inoxidable pulido\nCartucho de 35 mm (gran caudal)\nBase del monocomando: Ø 52 mm\n1 bar de presión como mínimo\nGarantía 5 años\nPara adaptar esta griferia a un filtro purificador, se requiere de un adaptador rosca M22x1 HEMBRA que deberá solicitar a proveedor de filtro.\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Steel 20-205" },
-      { "key": "Material", "value": "Acero pulido" },
-      { "key": "Colores", "value": "Acero" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Steel 20-205"
+      },
+      {
+        "key": "Material",
+        "value": "Acero pulido"
+      },
+      {
+        "key": "Colores",
+        "value": "Acero"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["acero", "cocina", "griferias"]
+    "tags": [
+      "acero",
+      "cocina",
+      "griferias"
+    ]
   },
   {
     "id": "19",
@@ -459,20 +890,44 @@
     "subcategory": "combo",
     "price": 169863,
     "priceCash": 152877,
-    "installments": { "count": 3, "amount": 56621 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_872665-MLA99635221371_112025-O.webp"],
-    "description": "Combo de grifería de lavatorio línea Río en negro más bacha a juego. Conjunto listo para instalar.",
+    "installments": {
+      "count": 3,
+      "amount": 56621
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_872665-MLA99635221371_112025-O.webp"
+    ],
+    "description": "Combo Peirano Lavatorio Bajo Rio Black y Bacha de apoyar circular.\n\nBCH02 – Bacha de apoyar circular (415×145)\nBCH - 02\nCARACTERÍSTICAS\nCerámica.\n\nLínea Río Black – Lavatorio bajo Monocomando\n60-176N\nCARACTERÍSTICAS\nTerminación Negro Mate\nCierre cerámico\nCartucho de 35 mm\nTerminación resistente a 200 horas de niebla salina\nCuerpo metálico\nGarantía 5 años\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Grifería + Bacha" },
-      { "key": "Colores", "value": "Negro" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Grifería + Bacha"
+      },
+      {
+        "key": "Colores",
+        "value": "Negro"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["negro", "combo", "bachas"]
+    "tags": [
+      "negro",
+      "combo",
+      "bachas"
+    ]
   },
   {
     "id": "20",
@@ -484,20 +939,43 @@
     "subcategory": "percha",
     "price": 25471,
     "priceCash": 22924,
-    "installments": { "count": 3, "amount": 8490 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_943601-MLA95642791720_102025-O.webp"],
-    "description": "Percha de baño Peirano línea Fabric en cromo. Diseño elegante para toallas y accesorios.",
+    "installments": {
+      "count": 3,
+      "amount": 8490
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_943601-MLA95642791720_102025-O.webp"
+    ],
+    "description": "Accesorios para baño Peirano Fabric Cromo\nModelo: 17030C\nTerminacion: Cromado.\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n- HACEMOS ENVIOS, CONSULTAR COSTOS!!!\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Fabric" },
-      { "key": "Tipo", "value": "Percha" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Fabric"
+      },
+      {
+        "key": "Tipo",
+        "value": "Percha"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "accesorios"]
+    "tags": [
+      "cromo",
+      "accesorios"
+    ]
   },
   {
     "id": "21",
@@ -509,20 +987,44 @@
     "subcategory": "combo",
     "price": 221546,
     "priceCash": 199391,
-    "installments": { "count": 3, "amount": 73849 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_738408-MLA96151621823_102025-O.webp"],
-    "description": "Combo de baño línea Río: grifería de ducha de embutir y bidet a juego. Instalación empotrada premium.",
+    "installments": {
+      "count": 3,
+      "amount": 73849
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_738408-MLA96151621823_102025-O.webp"
+    ],
+    "description": "Griferia Combo Baño Peirano Rio cromo.\nIncluye ducha con transferencia de embutir y bidet con transferencia.\n\nLínea Río – Ducha de embutir Monocomando\n80 - 176\nCARACTERÍSTICAS\nCierre cerámico.\nTerminación resistente a 200 horas de niebla salina\nDucha anticalcárea 10 cm\nGarantía 5 años\n\nLínea Río – Bidé Monocomando\n70 - 176\nCARACTERÍSTICAS\nCierre cerámico.\nCuerpo totalmente metálico.\nTerminación resistente a 200 horas de niebla salina\nGarantía 5 años\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n- HACEMOS ENVIOS, CONSULTAR COSTOS!!!\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Incluye", "value": "Ducha embutir + Bidet" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Incluye",
+        "value": "Ducha embutir + Bidet"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "combo", "duchas"]
+    "tags": [
+      "cromo",
+      "combo",
+      "duchas"
+    ]
   },
   {
     "id": "22",
@@ -534,20 +1036,43 @@
     "subcategory": "lavatorio",
     "price": 72644,
     "priceCash": 65380,
-    "installments": { "count": 3, "amount": 24215 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_657312-MLA94782424412_102025-O.webp"],
-    "description": "Grifería monocomando de lavatorio bajo línea Río. Diseño clásico y confiable.",
+    "installments": {
+      "count": 3,
+      "amount": 24215
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_657312-MLA94782424412_102025-O.webp"
+    ],
+    "description": "La Grifería baño lavatorio monocomando bajo cromo Rio Peirano es la elección perfecta para quienes buscan un toque de modernidad y funcionalidad en su baño. Con un diseño contemporáneo y elegante, su acabado en cromo brillante no solo aporta un estilo sofisticado, sino que también es fácil de limpiar y mantener. Este modelo de grifería monocomando permite un control intuitivo de la temperatura y el caudal del agua, brindando comodidad en cada uso. Ideal para baños contemporáneos, su construcción con materiales de alta calidad asegura una durabilidad excepcional, resistiendo el paso del tiempo y el uso diario. Además, cuenta con un impuesto interno del 0% y un IVA del 21%, lo que la convierte en una opción accesible y atractiva para cualquier hogar. Con la marca Peirano, puedes confiar en la excelencia y el diseño de este producto.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Río" },
-      { "key": "Tipo", "value": "Monocomando bajo" },
-      { "key": "Colores", "value": "Cromo" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Río"
+      },
+      {
+        "key": "Tipo",
+        "value": "Monocomando bajo"
+      },
+      {
+        "key": "Colores",
+        "value": "Cromo"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["cromo", "griferias"]
+    "tags": [
+      "cromo",
+      "griferias"
+    ]
   },
   {
     "id": "23",
@@ -559,20 +1084,44 @@
     "subcategory": "ducha",
     "price": 25016,
     "priceCash": 22514,
-    "installments": { "count": 3, "amount": 8339 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_816377-MLA93499589491_092025-O.webp"],
+    "installments": {
+      "count": 3,
+      "amount": 8339
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_816377-MLA93499589491_092025-O.webp"
+    ],
     "description": "Flor de ducha Peirano con brazo y campana anticalcárea. Rociador de fácil limpieza y buen caudal.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Tipo", "value": "Flor con brazo y campana" },
-      { "key": "Característica", "value": "Anticalcárea" },
-      { "key": "Colores", "value": "Plateado" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Tipo",
+        "value": "Flor con brazo y campana"
+      },
+      {
+        "key": "Característica",
+        "value": "Anticalcárea"
+      },
+      {
+        "key": "Colores",
+        "value": "Plateado"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["plateado", "ducha", "duchas"]
+    "tags": [
+      "plateado",
+      "ducha",
+      "duchas"
+    ]
   },
   {
     "id": "24",
@@ -584,20 +1133,45 @@
     "subcategory": "combo",
     "price": 531141,
     "priceCash": 478027,
-    "installments": { "count": 3, "amount": 177047 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_935348-MLA109053888212_032026-O.webp"],
-    "description": "Combo de baño línea Beat en níquel: grifería de lavatorio de pared y bidet. Alta gama para baños de diseño.",
+    "installments": {
+      "count": 3,
+      "amount": 177047
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_935348-MLA109053888212_032026-O.webp"
+    ],
+    "description": "Combo de griferia para baño Peirano Beat Niquel.\nIncluye lavatorio de pared y bidet con transferencia.\n\nLínea Beat Niquel – Lavatorio de pared\n62-201NI\nCARACTERÍSTICAS\nCierre cerámico.\nCuerpo totalmente metálico.\nTerminación resistente a 200 horas de niebla salina\nGarantía 5 años\nACABADO\nNiquel Pulido\n\nLínea Beat Niquel – Bidé Bicomando\n70-201NI\nCARACTERÍSTICAS\nCierre cerámico.\nCuerpo totalmente metálico.\nTerminación resistente a 200 horas de niebla salina\nGarantía 5 años\nACABADO\nNiquel Pulido\n\nSANITARIOS BAEZ\n- Realizamos facturas A y B\n- El precio publicado incluye I.V.A.\n- Todos nuestros productos son de primera y poseen garantía del fabricante.\n\n¿Dónde se puede retirar? ¿En qué horarios?\nPodés retirarlo en sucursal de Lunes a Viernes 8 a 12:30hs/15 a 18:30hs. Sabado 8 a 13hs.\nEstamos en Tapiales, Zona Oeste, Buenos Aires. A 15 cuadras del Mercado Central.\nColectivos que te acercan: 92,103, 185, 298.\nA 4 cuadras de la Estación Fournier de la linea de ferrocarril Belgrano Sur.\n\nLas imágenes son de carácter ilustrativo",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "Beat" },
-      { "key": "Incluye", "value": "Lavatorio de pared + Bidet" },
-      { "key": "Colores", "value": "Níquel" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "Beat"
+      },
+      {
+        "key": "Incluye",
+        "value": "Lavatorio de pared + Bidet"
+      },
+      {
+        "key": "Colores",
+        "value": "Níquel"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": true,
     "onPromo": false,
-    "tags": ["niquel", "combo", "griferias", "premium"]
+    "tags": [
+      "niquel",
+      "combo",
+      "griferias",
+      "premium"
+    ]
   },
   {
     "id": "25",
@@ -609,19 +1183,42 @@
     "subcategory": "percha",
     "price": 16706,
     "priceCash": 15035,
-    "installments": { "count": 3, "amount": 5569 },
-    "images": ["https://http2.mlstatic.com/D_NQ_NP_2X_629871-MLA95645761824_102025-O.webp"],
-    "description": "Percha doble con gancho para baño, línea 3000 de Peirano. Ideal para toallas y prendas.",
+    "installments": {
+      "count": 3,
+      "amount": 5569
+    },
+    "images": [
+      "https://http2.mlstatic.com/D_NQ_NP_2X_629871-MLA95645761824_102025-O.webp"
+    ],
+    "description": "La Percha Doble Perchero Gancho Baño Peirano Línea 3000 es la solución perfecta para mantener tus toallas organizadas y al alcance de la mano. Con un elegante acabado cromado en color plateado, este perchero no solo es funcional, sino que también añade un toque moderno a cualquier baño. Fabricado en metal de alta calidad, garantiza durabilidad y resistencia. Su diseño de doble gancho permite colgar múltiples toallas, optimizando el espacio disponible. Además, su sistema de fijación mediante tornillos asegura una instalación segura y estable. Con dimensiones de 30 cm de altura, 20 cm de ancho y 7 cm de largo, es ideal para cualquier ambiente. Su peso ligero de 140 g facilita su manejo y colocación. Este modelo 3030 es una opción versátil y práctica para quienes buscan un accesorio que combine estilo y funcionalidad en su hogar.",
     "specs": [
-      { "key": "Marca", "value": "Peirano" },
-      { "key": "Línea", "value": "3000" },
-      { "key": "Tipo", "value": "Percha doble" },
-      { "key": "Colores", "value": "Plateado" },
-      { "key": "Garantía", "value": "Garantía oficial Peirano" }
+      {
+        "key": "Marca",
+        "value": "Peirano"
+      },
+      {
+        "key": "Línea",
+        "value": "3000"
+      },
+      {
+        "key": "Tipo",
+        "value": "Percha doble"
+      },
+      {
+        "key": "Colores",
+        "value": "Plateado"
+      },
+      {
+        "key": "Garantía",
+        "value": "Garantía oficial Peirano"
+      }
     ],
     "inStock": true,
     "featured": false,
     "onPromo": false,
-    "tags": ["plateado", "accesorios"]
+    "tags": [
+      "plateado",
+      "accesorios"
+    ]
   }
 ]

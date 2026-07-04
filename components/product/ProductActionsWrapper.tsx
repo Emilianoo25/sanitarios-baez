@@ -10,7 +10,7 @@ export function ProductActionsWrapper({ product }: { product: Product }) {
   return (
     <>
       <ProductActions product={product} onOpenAI={() => setAiOpen(true)} variant="page" />
-      <AIModalPlaceholder open={aiOpen} onOpenChange={setAiOpen} />
+      <AIModalPlaceholder open={aiOpen} onOpenChange={setAiOpen} product={product} />
     </>
   )
 }

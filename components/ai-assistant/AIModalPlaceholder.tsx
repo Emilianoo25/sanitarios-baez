@@ -17,6 +17,8 @@ const HANDOFF_URL = `${whatsappBaseUrl()}?text=${encodeURIComponent(
 interface AIModalPlaceholderProps {
   open: boolean
   onOpenChange: (open: boolean) => void
+  /** Si se abre desde una publicación, el asistente arranca hablando de ese producto. */
+  product?: Product
 }
 
 interface ChatMessage {
@@ -35,18 +37,29 @@ const QUICK_PROMPTS = [
   'Una ducha tipo lluvia',
 ]
 
-const GREETING: ChatMessage = {
-  id: 'greeting',
-  role: 'assistant',
-  text: '¡Hola! 👋 Soy el asistente de Sanitarios Báez. Contame qué estás buscando o mandame una foto de tu ambiente y te recomiendo el producto ideal.',
+const QUICK_PROMPTS_PRODUCT = [
+  '¿Qué medidas tiene?',
+  '¿De qué material es?',
+  '¿Viene en otros colores?',
+  '¿Tiene garantía?',
+]
+
+function makeGreeting(product?: Product): ChatMessage {
+  return {
+    id: 'greeting',
+    role: 'assistant',
+    text: product
+      ? `¡Hola! 👋 Soy el asistente de Sanitarios Báez. ¿Qué querés saber sobre la ${product.name}? Puedo contarte medidas, materiales, colores, o ayudarte a decidir si te sirve.`
+      : '¡Hola! 👋 Soy el asistente de Sanitarios Báez. Contame qué estás buscando o mandame una foto de tu ambiente y te recomiendo el producto ideal.',
+  }
 }
 
 let idc = 0
 const newId = () => `m${++idc}-${Date.now()}`
 
-export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderProps) {
+export function AIModalPlaceholder({ open, onOpenChange, product }: AIModalPlaceholderProps) {
   const [mounted, setMounted] = useState(false)
-  const [messages, setMessages] = useState<ChatMessage[]>([GREETING])
+  const [messages, setMessages] = useState<ChatMessage[]>(() => [makeGreeting(product)])
   const [input, setInput] = useState('')
   const [typing, setTyping] = useState(false)
   const [pendingImage, setPendingImage] = useState<{ dataUrl: string; base64: string; mediaType: string } | null>(null)
@@ -235,7 +248,7 @@ export function AIModalPlaceholder({ open, onOpenChange }: AIModalPlaceholderPro
           {/* Quick prompts (solo al inicio) */}
           {messages.length === 1 && !typing && (
             <div className="flex flex-wrap gap-2 pt-1">
-              {QUICK_PROMPTS.map(q => (
+              {(product ? QUICK_PROMPTS_PRODUCT : QUICK_PROMPTS).map(q => (
                 <button
                   key={q}
                   onClick={() => sendText(q)}
