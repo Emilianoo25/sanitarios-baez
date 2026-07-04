@@ -84,15 +84,6 @@ export default async function ProductoPage({ params }: Props) {
                   </>
                 )}
               </div>
-              <p className="text-sm text-muted mt-1">
-                Efectivo:{' '}
-                <span className="font-medium">
-                  ${product.priceCash.toLocaleString('es-AR')}
-                </span>
-                {' · '}
-                {product.installments.count}x $
-                {product.installments.amount.toLocaleString('es-AR')} sin interés
-              </p>
             </div>
 
             <div>

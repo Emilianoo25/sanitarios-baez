@@ -54,7 +54,9 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
             src={product.images[0]}
             alt={product.name}
             fill
-            className="object-contain p-6 transition-transform duration-500 ease-premium group-hover:scale-[1.07]"
+            className={`object-contain p-6 transition-transform duration-500 ease-premium group-hover:scale-[1.07] ${
+              !product.inStock ? 'opacity-40 grayscale' : ''
+            }`}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             quality={90}
           />
@@ -86,7 +88,7 @@ export function ProductCard({ product, onOpenAI, isPremium = false }: ProductCar
             )}
           </div>
           <p className="text-xs text-muted mt-1 nums-tabular">
-            Efectivo ${product.priceCash.toLocaleString('es-AR')} · {product.installments.count}× ${product.installments.amount.toLocaleString('es-AR')}
+            Efectivo ${product.priceCash.toLocaleString('es-AR')}
           </p>
         </div>
 

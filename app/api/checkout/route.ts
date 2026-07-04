@@ -52,6 +52,9 @@ export async function POST(req: Request) {
     if (!product) {
       return NextResponse.json({ error: `Producto inexistente: ${line?.id}` }, { status: 400 })
     }
+    if (!product.inStock) {
+      return NextResponse.json({ error: `Sin stock: ${product.name}` }, { status: 409 })
+    }
     const quantity = Math.min(MAX_QTY, Math.max(1, Math.trunc(Number(line.quantity) || 1)))
     items.push({
       id: product.id,
